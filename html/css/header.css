@@ -1,0 +1,29 @@
+.header {
+	background-color: #892424;
+	height: 60px;
+}
+.header .navbar-top .navbar-nav >li >a{
+	line-height: 60px;
+	padding-top: 0;
+	padding-bottom: 0;
+	color: #fff;
+}
+.header .navbar-top .navbar-nav >li >a:hover,.header .navbar-top .navbar-nav >li >a.active{
+	background-color: #cf2732; 
+}
+.header .navbar-brand {
+	padding: 0;
+	margin-right: 50px;
+}
+.header .navbar-brand img {	
+	float: left;
+	margin-right: 20px;
+}
+.header .navbar-brand .logo1 {
+	height: 54px;
+	margin: 3px;
+}
+.header .navbar-brand .logo2 {
+	height: 46px;
+	margin: 7px;
+}

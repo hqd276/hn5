@@ -1,0 +1,37 @@
+h2 {
+	color: #5ecdd4;
+}
+.recent-post-block .item {
+	padding: 20px 0;
+	position: relative;
+}
+.recent-post-block .item a{
+	text-decoration: none;
+}
+.recent-post-block .item img {
+	float: left;
+	width: 100%;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.recent-post-block .item span {
+	color: #d9bb4b;
+}
+.recent-post-block .item h4 {
+	color: #5ecdd4;
+}
+.recent-post-block .item h4:hover {
+	color: #d9bb4b;
+	cursor: pointer;
+}
+.recent-post-block .item p {
+	color: #787878;
+}
+
+.recent-post-block .item .more {
+	padding: 10px 20px;
+	color: #fff;
+	background-image: linear-gradient(to bottom,#30373f,#272d33);
+	box-shadow: 1px 2px 0 rgba(0,0,0,0.3);
+	background-repeat:repeat-x;
+}

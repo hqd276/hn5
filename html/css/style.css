@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'UTMBebas';
+    src: url('../fonts/UTMBebas.ttf') format('truetype');
+}
+body {
+	font-family: UTM Bebas;
+	font-size: 20px;
+}
+.block-content {
+	width: 990px;
+	margin: 0px auto;
+}
+.carousel-control.left, .carousel-control.right  {
+	background-image: none;
+}
