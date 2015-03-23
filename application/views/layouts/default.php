@@ -16,6 +16,9 @@
 <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/header.css">
 <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/footer.css">
 
+<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/js/lightbox.js">
+<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/lightbox.css">
+
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,900,300' rel='stylesheet' type='text/css'>
 
 </head>

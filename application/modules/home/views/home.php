@@ -50,24 +50,106 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    	<div class="box">
+		    			<a data-lightbox="image1" href="<? echo base_url();?>assets/images/project1.jpg">
+				    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+				    		<span class="caption simple-caption">  
+					        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+					        </span>  
+				        </a>
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
 			    </div>
 			    <div class="item">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption simple-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
 			    </div>
 			  </div>
 
@@ -93,24 +175,104 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			      	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
 			    </div>
 			    <div class="item">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			      <img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			      	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
+			    	<div class="box">
+			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			    		<span class="caption scale-caption">  
+				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+				        </span>  
+			    	</div>
 			    </div>
 			  </div>
 
