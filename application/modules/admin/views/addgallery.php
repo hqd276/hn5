@@ -19,6 +19,15 @@
 			</div>
 		</div>
 		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Category</label>
+			<div class="col-sm-10">
+				<select class='form-control' name='category_id'>
+					<!-- <option value='-1' <?php echo ($item['category_id'] == -1)?'selected':''?> >- Root -</option> -->
+					<?php echo $category_box;?>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Title</label>
 			<div class="col-sm-10">
 			  	<input type="" class="form-control" id="inputEmail3" name="title" placeholder="Title" value="<?php echo $item['title']; ?>">

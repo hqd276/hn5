@@ -32,7 +32,7 @@
 </div>
 <div id="about" class="about text-center" data-sr>
 	<h1 class="text-uppercase">giới thiệu</h1>
-	<p class="text-justify col-md-6 col-md-offset-3">Mở đầu buổi họp báo, Phó chủ tịch Nguyễn Quốc Hùng cho hay thành phố luôn lắng nghe, cầu thị, tiếp thu ý kiến người dân, các nhà khoa học để xây dựng Thủ đô ngày càng văn minh. "Hà Nội từng có những quyết định rất khó khăn nhưng đem lại sự hưởng ứng của người dân như quyết định không xây khách sạn SAS tại công viên Thống Nhất, không xây dựng trung tâm thương mại tại chợ 19/12... Tiếp thu ý kiến công luận, Chủ tịch thành phố đã có quyết định dừng việc chặt hạ, thay thế cây", ông Hùng nói.</p>
+	<p class="text-justify col-md-6 col-md-offset-3"><?php echo $setting['about']['data']->description;?></p>
 </div>
 <div id="project" class="project" data-sr>
 	<h1 class="text-uppercase">dự án</h1>
@@ -44,115 +44,46 @@
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-made" data-slide-to="0" class="active"></li>
+			    <?php if(count($list_gallery_1)>8) {?>
 			    <li data-target="#carousel-made" data-slide-to="1"></li>
+			    <?php }?>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			    	<div class="box">
-		    			<a data-lightbox="image1" href="<? echo base_url();?>assets/images/project1.jpg">
-				    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
+			  	<?php 
+			  	if (count($list_gallery_1)>0) {?>
+			  		<div class="item active">
+			  		<?php for ($i=0; $i < 8; $i++) { 
+			  			if (isset($list_gallery_1[$i])){?>
+			  			<div class="box">
+		    			<a data-lightbox="image1" href="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>">
+				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
 				    		<span class="caption simple-caption">  
-					        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
+					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
 					        </span>  
 				        </a>
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    </div>
-			    <div class="item">
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    </div>
-			  </div>
-
+			    		</div>
+			  		<?php } 
+			  		}?>
+			  		</div>
+			  		<div class="item">
+			  		<?php if(count($list_gallery_1)>8) 
+			  			for ($i=8; $i < 16; $i++) { 
+			  			if (isset($list_gallery_1[$i])){?>
+			  			<div class="box">
+		    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>">
+				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
+				    		<span class="caption simple-caption">  
+					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
+					        </span>  
+				        </a>
+			    		</div>
+			  		<?php } 
+			  		}?>
+			  		</div>
+			  	<?php }?>
+			  	</div>
 			  <!-- Controls -->
 			  <!-- <a class="left carousel-control" href="#carousel-project" role="button" data-slide="prev">
 			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -169,112 +100,46 @@
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-ongoing" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-ongoing" data-slide-to="1"></li>
+			    <?php if(count($list_gallery_2)>8) {?>
+			    <li data-target="#carousel-made" data-slide-to="1"></li>
+			    <?php }?>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    </div>
-			    <div class="item">
-			      	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    	<div class="box">
-			    		<img id="image-6" src="<? echo base_url();?>assets/images/project1.jpg" alt="...">
-			    		<span class="caption scale-caption">  
-				        <p class="text-uppercase">Căn hộ cao cấp TIME CITY <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			    	</div>
-			    </div>
-			  </div>
+			  	<?php 
+			  	if (count($list_gallery_2)>0) {?>
+			  		<div class="item active">
+			  		<?php for ($i=0; $i < 8; $i++) { 
+			  			if (isset($list_gallery_2[$i])){?>
+			  			<div class="box">
+		    			<a data-lightbox="image1" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
+				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
+				    		<span class="caption simple-caption">  
+					        <p class="text-uppercase"><?php echo $list_gallery_2[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
+					        </span>  
+				        </a>
+			    		</div>
+			  		<?php } 
+			  		}?>
+			  		</div>
+			  		<div class="item">
+			  		<?php if(count($list_gallery_2)>8) 
+			  			for ($i=8; $i < 16; $i++) { 
+			  			if (isset($list_gallery_2[$i])){?>
+			  			<div class="box">
+		    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
+				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
+				    		<span class="caption simple-caption">  
+					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
+					        </span>  
+				        </a>
+			    		</div>
+			  		<?php } 
+			  		}?>
+			  		</div>
+			  	<?php }?>
+			  	</div>
 
 			  <!-- Controls -->
 			  <!-- <a class="left carousel-control" href="#carousel-project" role="button" data-slide="prev">
@@ -322,9 +187,9 @@
 	</div>
 	
 	<ul class="col-md-6 list-unstyled text-uppercase text-left">
-		<li><img src="<? echo base_url();?>assets/images/contact-mobile.png">0916287899/ 0915698083</li>
-		<li><img src="<? echo base_url();?>assets/images/contact-mail.png">noithathn5@gmail.com</li>
-		<li><img src="<? echo base_url();?>assets/images/contact-address.png">số 33 ngõ 28 ngụy như con tum - thanh xuân - hà nội</li>
-		<li><img src="<? echo base_url();?>assets/images/contact-fb.png">facebook.com/hnfive</li>
+		<li><img src="<? echo base_url();?>assets/images/contact-mobile.png"><?php echo $setting['phone']['data']->description;?></li>
+		<li><img src="<? echo base_url();?>assets/images/contact-mail.png"><?php echo $setting['email']['data']->description;?></li>
+		<li><img src="<? echo base_url();?>assets/images/contact-address.png"><?php echo $setting['address']['data']->description;?></li>
+		<li><img src="<? echo base_url();?>assets/images/contact-fb.png"><?php echo $setting['facebook']['data']->description;?></li>
 	</ul>
 </div>

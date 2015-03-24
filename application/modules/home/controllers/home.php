@@ -21,9 +21,12 @@ class Home extends MX_Controller{
 		}
 		$data['setting'] = $setting;
 
-		$this->load->model('admin/modelnews');
-		$list_news = $this->modelnews->getNews(array('home_news'=>1),' LIMIT 0,5');
-		$data['list_news'] = $list_news;
+		$this->load->model(array('admin/modelgallery'));
+		$list_gallery_1 = $this->modelgallery->getGallery(array('category_id'=>1),"LIMIT 16");
+		$data['list_gallery_1'] = $list_gallery_1;
+
+		$list_gallery_2 = $this->modelgallery->getGallery(array('category_id'=>2),"LIMIT 16");
+		$data['list_gallery_2'] = $list_gallery_2;
 
 		$this->template->build('home',$data);
 	}

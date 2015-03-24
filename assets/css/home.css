@@ -30,6 +30,7 @@
 	/*float: left;*/
 	height: 250px;
 	width: 25%;
+	background-size: cover;
 }
 .project .carousel-inner .item .box img{
 	/*float: left;*/

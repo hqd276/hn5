@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/hn5/';
+$config['base_url']	= 'http://local.hn5.vn';
 // $config['base_url']	= 'http://zenithvietnamtours.com/';
 
 /*

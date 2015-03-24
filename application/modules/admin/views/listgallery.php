@@ -6,6 +6,7 @@
 		<thead>
 			<th>Id</th>
 			<th>Title</th>
+			<th>Category</th>
 			<th>Image</th>
 			<th>Status</th>
 			<th>Action</th>
@@ -16,13 +17,15 @@
 			<tr>
 				<td><?php echo $item["id"]?></td>
 				<td><?php echo $item["title"]?></td>
+				<td><?php echo $item["category"]?></td>
 				<td><?php 
 				if ($item['image']!='') {
 					echo "<img class='img_item' style='height:150px;' src='".base_url("uploads/gallery/".$item['image'])."'/>";
 				}
 				?></td>
-				<td><?php echo $item["status"]?></td>
+				<td><?php echo ($item["status"])?"Hiển thị":"Không hiển thị"?></td>
 				<td>
+					<a href="<?php echo base_url("/admin/gallery/edit/".$item["id"]);?>"  class="btn btn-default">Edit</a>
 					<a href="#" onclick="confirmClick('<?php echo base_url('/admin/gallery/delete/'.$item["id"])?>')" class="btn btn-default"> Delete </a>
 				</td>
 			</tr>
@@ -34,5 +37,11 @@
 		<?php }?>
 		</tbody>
 	</table>
+	<nav>
+	  	<ul class="pager">
+		    <li class="previous <?php if ($prev <1) echo 'disabled';?>"><a href="<?php if ($prev >=1) echo  base_url().'admin/gallery/'. $prev ?>"><span aria-hidden="true">&larr;</span> Older</a></li>
+		    <li class="next <?php if ($next == 0) echo 'disabled';?>"><a href="<?php if ($next <> 0) echo base_url().'admin/gallery/'. $next ?>">Newer <span aria-hidden="true">&rarr;</span></a></li>
+	  	</ul>
+	</nav>
 </div>
 		

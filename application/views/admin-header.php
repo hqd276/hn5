@@ -17,7 +17,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav text-uppercase">
-		    <li class="dropdown">
+		    <!-- <li class="dropdown">
 	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">News <span class="caret"></span></a>
 	          	<ul class="dropdown-menu text-capitalize" role="menu">
 	          		<li class="dropdown-submenu">
@@ -56,15 +56,19 @@
 	                </ul>
 	              	</li>
 	          	</ul>
-	        </li>
-	        <li>
-	        	<a href="<? echo base_url();?>admin/gallery">Gallery</a>
-	        </li>
+	        </li> -->
+	        <li class="dropdown">
+	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
+	          	<ul class="dropdown-menu text-capitalize" role="menu">
+	          		<li><a href="<? echo base_url();?>admin/category/index/0">Category</a></li>
+	          		<li><a href="<? echo base_url();?>admin/gallery">Item</a></li>
+	          	</ul>
+          	</li>
 	        <li class="dropdown">
 	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">System <span class="caret"></span></a>
 	          	<ul class="dropdown-menu text-capitalize" role="menu">
-	          		<li><a href="<? echo base_url();?>admin/support">Supports</a></li>
-	          		<li><a href="<? echo base_url();?>admin/booking">Booking</a></li>
+	          		<!-- <li><a href="<? echo base_url();?>admin/support">Supports</a></li>
+	          		<li><a href="<? echo base_url();?>admin/booking">Booking</a></li> -->
 	          		<li><a href="<? echo base_url();?>admin/setting">Settings</a></li>
 	          	</ul>
           	</li>

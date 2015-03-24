@@ -1,4 +1,4 @@
-<div class="login-form bg-white">
+<div class="login-form bg-white col-md-6 col-md-offset-3">
 	<h2 class="">Login form</h2>
 	<form class="form-horizontal" role="form" method="post" action="<? echo base_url();?>login">
 		<div class="form-group">
@@ -39,4 +39,7 @@
 			</div>
 		</div>
 	</form>
+
 </div>
+
+<div class="clearfix"></div>

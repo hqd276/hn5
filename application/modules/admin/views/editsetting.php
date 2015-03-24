@@ -52,7 +52,7 @@ tinymce.init({
 			  	<input type="" class="form-control" id="inputEmail3" name="name" placeholder="Name" value="<?php echo $item['name']; ?>">
 			</div>
 		</div>
-		<div class="form-group col-sm-12">
+		<!-- <div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Image</label>
 			<div class="col-sm-10">
 				<?php 
@@ -62,20 +62,20 @@ tinymce.init({
 				?>
 			  	<input type="file" class="form-control" id="inputEmail3" name="image" placeholder="Image">
 			</div>
-		</div>
+		</div> -->
 		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Description</label>
 			<div class="col-sm-10">
-				<textarea class="form-control" name="description" placeholder="Description"><?php echo $item['description']; ?></textarea>
+				<textarea class="form-control" name="description" placeholder="Description" style="height:150px;"><?php echo $item['description']; ?></textarea>
 			</div>
 		</div>
-		<?php if (($item['key']=='about')||($item['key']=='contact')) {?>
-		<div class="form-group col-sm-12">
+		<?php if  ($item['key']=='about') {?>
+		<!-- <div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Detail</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" id="detail" name="detail" placeholder="Detail"><?php echo $item['detail']; ?></textarea>
 			</div>
-		</div>
+		</div> -->
 		<?php }?>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">

@@ -31,8 +31,8 @@ class Mgallery extends CI_Model{
         $config = array("source_image" => $image_data['full_path'],
                         "new_image" => $this->_gallery_path . "thumbs",
                         "maintain_ration" => true,
-                        "width" => '270',
-                        "height" => "180");
+                        "width" => '320',
+                        "height" => "250");
         $this->load->library("image_lib",$config);
         $this->image_lib->resize();
         //kết thúc công đoạn resize lại hình ảnh 
