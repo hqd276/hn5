@@ -57,6 +57,9 @@
 	              	</li>
 	          	</ul>
 	        </li> -->
+	        <li>
+	        	<a href="<? echo base_url();?>admin/member">Member</a>
+	        </li>
 	        <li class="dropdown">
 	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
 	          	<ul class="dropdown-menu text-capitalize" role="menu">

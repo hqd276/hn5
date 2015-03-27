@@ -28,6 +28,10 @@ class Home extends MX_Controller{
 		$list_gallery_2 = $this->modelgallery->getGallery(array('category_id'=>2),"LIMIT 16");
 		$data['list_gallery_2'] = $list_gallery_2;
 
+		$this->load->model(array('admin/modelmember'));
+		$list_member = $this->modelmember->getMembers(null,"LIMIT 3");
+		$data['list_member'] = $list_member;
+
 		$this->template->build('home',$data);
 	}
 }

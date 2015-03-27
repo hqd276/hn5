@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'UTMBebas';
-    src: url('../fonts/UTMBebas.ttf') format('truetype');
+    font-family: 'UTM Bebas';
+    src: url('../fonts/UTM Bebas.ttf') format('truetype');
 }
 body {
-	font-family: UTM Bebas;
+	/*font-family: UTM Bebas;*/
 	font-size: 20px;
 }
 .block-content {

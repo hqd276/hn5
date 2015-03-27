@@ -58,7 +58,7 @@
 			  			if (isset($list_gallery_1[$i])){?>
 			  			<div class="box">
 		    			<a data-lightbox="image1" href="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>">
-				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
+				    		<img id="image-6" src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
 				    		<span class="caption simple-caption">  
 					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
 					        </span>  
@@ -67,21 +67,22 @@
 			  		<?php } 
 			  		}?>
 			  		</div>
-			  		<div class="item">
-			  		<?php if(count($list_gallery_1)>8) 
+			  		<?php if(count($list_gallery_1)>8) {
+			  			echo '<div class="item">';
 			  			for ($i=8; $i < 16; $i++) { 
-			  			if (isset($list_gallery_1[$i])){?>
-			  			<div class="box">
-		    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>">
-				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
-				    		<span class="caption simple-caption">  
-					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
-					        </span>  
-				        </a>
-			    		</div>
-			  		<?php } 
+				  			if (isset($list_gallery_1[$i])){?>
+				  			<div class="box">
+			    			<a data-lightbox="image1" href="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>">
+					    		<img id="image-6" src="<?php echo base_url("uploads/gallery/".$list_gallery_1[$i]['image']); ?>" alt="...">
+					    		<span class="caption simple-caption">  
+						        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
+						        </span>  
+					        </a>
+				    		</div>
+				  			<?php } 
+			  			}
+			  			echo '</div>';
 			  		}?>
-			  		</div>
 			  	<?php }?>
 			  	</div>
 			  <!-- Controls -->
@@ -113,9 +114,9 @@
 			  		<?php for ($i=0; $i < 8; $i++) { 
 			  			if (isset($list_gallery_2[$i])){?>
 			  			<div class="box">
-		    			<a data-lightbox="image1" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
-				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
-				    		<span class="caption simple-caption">  
+		    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
+				    		<img id="image-6" src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
+				    		<span class="caption scale-caption">  
 					        <p class="text-uppercase"><?php echo $list_gallery_2[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
 					        </span>  
 				        </a>
@@ -123,21 +124,22 @@
 			  		<?php } 
 			  		}?>
 			  		</div>
-			  		<div class="item">
-			  		<?php if(count($list_gallery_2)>8) 
+			  		<?php if(count($list_gallery_2)>8) {
+			  			echo '<div class="item">';
 			  			for ($i=8; $i < 16; $i++) { 
-			  			if (isset($list_gallery_2[$i])){?>
-			  			<div class="box">
-		    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
-				    		<img src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
-				    		<span class="caption simple-caption">  
-					        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
-					        </span>  
-				        </a>
-			    		</div>
-			  		<?php } 
-			  		}?>
-			  		</div>
+				  			if (isset($list_gallery_2[$i])){?>
+				  			<div class="box">
+			    			<a data-lightbox="image2" href="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>">
+					    		<img id="image-6" src="<?php echo base_url("uploads/gallery/".$list_gallery_2[$i]['image']); ?>" alt="...">
+					    		<span class="caption scale-caption">  
+						        <p class="text-uppercase"><?php echo $list_gallery_1[$i]['title']; ?> <span class="btn btn-default">Xem</span></p>  
+						        </span>  
+					        </a>
+				    		</div>
+					  		<?php } 
+				  		}
+				  		echo '</div>';
+				  	}?>
 			  	<?php }?>
 			  	</div>
 
@@ -157,24 +159,18 @@
 </div>
 <div id="member" class="member " data-sr>
 	<h1 class="text-uppercase">thành viên</h1>
-	<a href="" class="col-md-2 col-md-offset-3">
-		<img src="<? echo base_url();?>assets/images/logo1.png" class="img-circle">
-		<div class="caption">
-			<h3>KTS. <br>Quang Tran</h3>
-		</div>
-	</a>
-	<a href="" class="col-md-2">
-		<img src="<? echo base_url();?>assets/images/logo1.png" class="img-circle">
-		<div class="caption">
-			<h3>KTS. <br>Quang Tran</h3>
-		</div>
-	</a>
-	<a href="" class="col-md-2">
-		<img src="<? echo base_url();?>assets/images/logo1.png" class="img-circle">
-		<div class="caption">
-			<h3>KTS. <br>Quang Tran</h3>
-		</div>
-	</a>
+	<div class="col-md-6 col-md-offset-3">
+	<?php 
+	foreach ($list_member as $key => $value) {?>
+		<a href="" class="col-md-4">
+			<img src="<?php echo base_url("uploads/member/".$value['image']); ?>" class="img-circle">
+			<div class="caption">
+				<h3><?php echo $value['description'];?> <br><?php echo $value['name'];?></h3>
+			</div>
+		</a>
+	<?php }
+	?>
+	</div>
 </div>
 <div class="clearfix"></div>
 <div id="contact" class="contact " data-sr>
