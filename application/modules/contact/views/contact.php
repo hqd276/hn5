@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/contact.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/contact.css">
 
 <div class="contact-form col-sm-12 bg-white">
 	<div class="col-sm-4">
@@ -7,7 +7,7 @@
 			<?php echo $setting['contact']['data']->detail;?>
 		</p>
 	</div>
-	<form class="form-horizontal  col-sm-8" role="form" method="post" action="<? echo base_url();?>contact">
+	<form class="form-horizontal  col-sm-8" role="form" method="post" action="<?php echo base_url();?>contact">
 		<h2 class="text-uppercase">Contact form</h2>
 		<div class="form-group">
 			<div>

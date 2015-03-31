@@ -10,8 +10,8 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	      <a class="navbar-brand" href="#">
-	      	<img class="logo1" src="<? echo base_url();?>assets/images/logo1.png">
-	      	<img class="logo2" src="<? echo base_url();?>assets/images/logo2.png">
+	      	<img class="logo1" src="<?php echo base_url();?>assets/images/logo1.png">
+	      	<img class="logo2" src="<?php echo base_url();?>assets/images/logo2.png">
 	      </a>
 	    </div>
 

@@ -21,12 +21,27 @@ class Home extends MX_Controller{
 		}
 		$data['setting'] = $setting;
 
+		$this->load->model(array('modelcategory'));
 		$this->load->model(array('admin/modelgallery'));
-		$list_gallery_1 = $this->modelgallery->getGallery(array('category_id'=>1),"LIMIT 16");
-		$data['list_gallery_1'] = $list_gallery_1;
+		$this->load->model(array('admin/modelbanner'));
 
-		$list_gallery_2 = $this->modelgallery->getGallery(array('category_id'=>2),"LIMIT 16");
-		$data['list_gallery_2'] = $list_gallery_2;
+		$list_category = $this->modelcategory->getCategories(array("type"=>0));
+		$cat_made = array();
+		$cat_ongoing = array();
+		foreach ($list_category as $key => $value) {
+			$value['items'] = $this->modelgallery->getGallery(array('category_id'=>$value['id']));
+
+			if ($value['parent']==1){
+				$cat_made[] = $value;
+			}elseif ($value['parent']==0){
+				$cat_ongoing[] = $value;
+			}
+		}
+		$data['cat_made'] = $cat_made;
+		$data['cat_ongoing'] = $cat_ongoing;
+
+		$banners = $this->modelbanner->getBanner(array('position'=>0));
+		$data['banners'] = $banners;
 
 		$this->load->model(array('admin/modelmember'));
 		$list_member = $this->modelmember->getMembers(null,"LIMIT 3");

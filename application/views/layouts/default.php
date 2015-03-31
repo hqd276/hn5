@@ -12,12 +12,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/header.css">
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/footer.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/header.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/footer.css">
 
-<script src="<? echo base_url();?>assets/js/lightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/lightbox.css">
+<script src="<?php echo base_url();?>assets/js/lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/lightbox.css">
 
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,900,300' rel='stylesheet' type='text/css'>
 
@@ -32,7 +32,7 @@
 
 <?php echo $template['partials']['footer']; ?>
 
-<script src="<? echo base_url();?>assets/js/scrollReveal.js"></script>
+<script src="<?php echo base_url();?>assets/js/scrollReveal.js"></script>
 <script>
 
   	// window.sr = new scrollReveal();

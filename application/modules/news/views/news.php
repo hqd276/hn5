@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/news.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/news.css">
 <div class=" bg-white">
 	<h2 class="text-uppercase"><?php echo $title?></h2>
 	<hr>

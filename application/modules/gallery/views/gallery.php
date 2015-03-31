@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/gallery.css">
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/gallery.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.css">
 
 <style type="text/css">
     .ekko-lightbox .modal-dialog {
@@ -31,7 +31,7 @@
 	<div class="clearfix"></div>
 </div>
 
-<script src="<? echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.js"></script>
+<script src="<?php echo base_url();?>assets/css/ekko-lightbox/ekko-lightbox.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function ($) {

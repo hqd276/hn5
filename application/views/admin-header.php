@@ -1,4 +1,4 @@
-<h1><a class="logo" href="<? echo base_url('admin');?>"> Administrator</a></h1>
+<h1><a class="logo" href="<?php echo base_url('admin');?>"> Administrator</a></h1>
 
 <nav class="navbar navbar-default " role="navigation">
 
@@ -11,7 +11,7 @@
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="<? echo base_url();?>"><span class="glyphicon glyphicon-home"></span></a>
+		  <a class="navbar-brand" href="<?php echo base_url();?>"><span class="glyphicon glyphicon-home"></span></a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,56 +23,59 @@
 	          		<li class="dropdown-submenu">
 	                <a tabindex="-1" href="#">News & Events</a>
 	                <ul class="dropdown-menu">
-	                  	<li><a href="<? echo base_url('admin/category/index/0');?>">News Category Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/index/0');?>">News Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/add/0');?>">Add new News</a></li>
+	                  	<li><a href="<?php echo base_url('admin/category/index/0');?>">News Category Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/index/0');?>">News Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/add/0');?>">Add new News</a></li>
 	                </ul>
 	              	</li>
 	              	<li class="divider"></li>
 	              	<li class="dropdown-submenu">
 	                <a tabindex="-1" href="#">Themes</a>
 	                <ul class="dropdown-menu">
-	                  	<li><a href="<? echo base_url('admin/category/index/1');?>">Themes Category Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/index/1');?>">Themes Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/add/1');?>">Add new Theme</a></li>
+	                  	<li><a href="<?php echo base_url('admin/category/index/1');?>">Themes Category Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/index/1');?>">Themes Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/add/1');?>">Add new Theme</a></li>
 	                </ul>
 	              	</li>
 	              	<li class="divider"></li>
 	              	<li class="dropdown-submenu">
 	                <a tabindex="-1" href="#">Tours</a>
 	                <ul class="dropdown-menu">
-	                  	<li><a href="<? echo base_url('admin/category/index/2');?>">Tours Category Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/index/2');?>">Tours Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/add/2');?>">Add new Tour</a></li>
+	                  	<li><a href="<?php echo base_url('admin/category/index/2');?>">Tours Category Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/index/2');?>">Tours Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/add/2');?>">Add new Tour</a></li>
 	                </ul>
 	              	</li>
 	              	<li class="divider"></li>
 	              	<li class="dropdown-submenu">
 	                <a tabindex="-1" href="#">Blog</a>
 	                <ul class="dropdown-menu">
-	                  	<li><a href="<? echo base_url('admin/category/index/3');?>">Blog Category Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/index/3');?>">Blog Manager</a></li>
-	                  	<li><a href="<? echo base_url('admin/news/add/3');?>">Add new Blog</a></li>
+	                  	<li><a href="<?php echo base_url('admin/category/index/3');?>">Blog Category Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/index/3');?>">Blog Manager</a></li>
+	                  	<li><a href="<?php echo base_url('admin/news/add/3');?>">Add new Blog</a></li>
 	                </ul>
 	              	</li>
 	          	</ul>
 	        </li> -->
 	        <li>
-	        	<a href="<? echo base_url();?>admin/member">Member</a>
+	        	<a href="<?php echo base_url();?>admin/member">Member</a>
+	        </li>
+	        <li>
+	        	<a href="<?php echo base_url();?>admin/banner">Slide Show</a>
 	        </li>
 	        <li class="dropdown">
 	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <span class="caret"></span></a>
 	          	<ul class="dropdown-menu text-capitalize" role="menu">
-	          		<li><a href="<? echo base_url();?>admin/category/index/0">Category</a></li>
-	          		<li><a href="<? echo base_url();?>admin/gallery">Item</a></li>
+	          		<li><a href="<?php echo base_url();?>admin/category/index/0">Category</a></li>
+	          		<li><a href="<?php echo base_url();?>admin/gallery">Item</a></li>
 	          	</ul>
           	</li>
 	        <li class="dropdown">
 	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">System <span class="caret"></span></a>
 	          	<ul class="dropdown-menu text-capitalize" role="menu">
-	          		<!-- <li><a href="<? echo base_url();?>admin/support">Supports</a></li>
-	          		<li><a href="<? echo base_url();?>admin/booking">Booking</a></li> -->
-	          		<li><a href="<? echo base_url();?>admin/setting">Settings</a></li>
+	          		<!-- <li><a href="<?php echo base_url();?>admin/support">Supports</a></li>
+	          		<li><a href="<?php echo base_url();?>admin/booking">Booking</a></li> -->
+	          		<li><a href="<?php echo base_url();?>admin/setting">Settings</a></li>
 	          	</ul>
           	</li>
 		  </ul>

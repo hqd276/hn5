@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/right.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/right.css">
 
 <div class="category-block">
 	<h3 class="text-uppercase">Categories</h3>

@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/bootstrap-datetimepicker.css">
-<script type="text/javascript" src="<? echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap-datetimepicker.css">
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
 	$(function () {
 		$('#to').datetimepicker({
@@ -39,7 +39,7 @@
 <div class="booking-form col-sm-12 bg-white">
 	<form class="form-horizontal col-sm-12" role="form" method="post" action="">
 		<!-- <h2 class="text-uppercase">Booking form</h2> -->
-		<img class="col-sm-12" src="<? echo base_url();?>images/booking.jpg">
+		<img class="col-sm-12" src="<?php echo base_url();?>images/booking.jpg">
 		<div class="form-group">
 			<div>
 				<span class="success">

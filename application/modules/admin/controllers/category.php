@@ -87,7 +87,7 @@ class Category extends MX_Controller{
 			} 
 		}
 
-		$data['category_box'] = $this->category_box($category, $dataC);
+		// $data['category_box'] = $this->category_box($category, $dataC);
 
 		$data['item'] = $dataC;
 		$this->template->build('addcategory',$data);
