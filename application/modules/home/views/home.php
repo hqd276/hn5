@@ -12,8 +12,7 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	  	<?php foreach ($banners as $key => $value){?>
-	    <div class="item <?php echo ($key==0)?"active":"" ?>">
-	      <img src="<?php echo base_url("uploads/banner/".$value['image']); ?>" alt="...">
+	    <div class="item <?php echo ($key==0)?"active":"" ?>" style="background:url(<?php echo base_url("uploads/banner/".$value['image']); ?>) no-repeat">
 	    </div>
 	   	<?php } ?>
 	  </div>
@@ -42,9 +41,9 @@
 	  	<div role="tabpanel" class="tab-pane fade in active" id="made">
 			  	<!-- Wrapper for slides -->
 			  	<div class="carousel-inner" role="listbox">
-		  		<div class="item active">
+		  		<div class="item active text-center">
 		  		<?php foreach ($cat_made as $key => $value){?>
-		  			<div class="box">
+		  			<div class="box col-md-3 col-xs-6 col-center">
 	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
 			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
 			    		<span class="caption simple-caption">  
@@ -59,9 +58,9 @@
 	  	<div role="tabpanel" class="tab-pane fade" id="ongoing">
 			  	<!-- Wrapper for slides -->
 			  	<div class="carousel-inner" role="listbox">
-		  		<div class="item active">
+		  		<div class="item active text-center">
 		  		<?php foreach ($cat_ongoing as $key => $value){?>
-		  			<div class="box">
+		  			<div class="box col-md-3 col-xs-6 col-center">
 	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
 			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
 			    		<span class="caption simple-caption">  
