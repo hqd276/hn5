@@ -17,7 +17,7 @@ class Mgallery extends CI_Model{
 
         $config = array('upload_path'   => $this->_gallery_path,
                         'allowed_types' => 'gif|jpg|png',
-                        'max_size'      => '2000');
+                        'max_size'      => '4096');
 
         $this->load->library("upload",$config);
         if(!$this->upload->do_upload("image")){
