@@ -15,3 +15,8 @@ body {
 .carousel-control.left, .carousel-control.right  {
 	background-image: none;
 }
+.col-center {
+	display:inline-block;
+    float:none !important;
+    margin-right:-4px;
+}

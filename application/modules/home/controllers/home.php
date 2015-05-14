@@ -25,7 +25,7 @@ class Home extends MX_Controller{
 		$this->load->model(array('admin/modelgallery'));
 		$this->load->model(array('admin/modelbanner'));
 
-		$list_category = $this->modelcategory->getCategories(array("type"=>0));
+		$list_category = $this->modelcategory->getCategories(array("type"=>0,"status"=>1));
 		$cat_made = array();
 		$cat_ongoing = array();
 		foreach ($list_category as $key => $value) {
