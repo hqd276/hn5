@@ -12,12 +12,7 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	  	<?php foreach ($banners as $key => $value){?>
-<<<<<<< HEAD
-	    <div class="item <?php echo ($key==0)?"active":"" ?>" style="background: url('<?php echo base_url("uploads/banner/".$value['image']); ?> ') no-repeat">
-	      <!-- <img src="" alt="..."> -->
-=======
 	    <div class="item <?php echo ($key==0)?"active":"" ?>" style="background:url(<?php echo base_url("uploads/banner/".$value['image']); ?>) no-repeat">
->>>>>>> origin/master
 	    </div>
 	   	<?php } ?>
 	  </div>
@@ -48,11 +43,7 @@
 			  	<div class="carousel-inner" role="listbox">
 		  		<div class="item active text-center">
 		  		<?php foreach ($cat_made as $key => $value){?>
-<<<<<<< HEAD
-		  			<div class="box col-md-3 col-xs-6">
-=======
 		  			<div class="box col-md-3 col-xs-6 col-center">
->>>>>>> origin/master
 	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
 			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
 			    		<span class="caption simple-caption">  
@@ -69,11 +60,7 @@
 			  	<div class="carousel-inner" role="listbox">
 		  		<div class="item active text-center">
 		  		<?php foreach ($cat_ongoing as $key => $value){?>
-<<<<<<< HEAD
-		  			<div class="box col-md-3 col-xs-6">
-=======
 		  			<div class="box col-md-3 col-xs-6 col-center">
->>>>>>> origin/master
 	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
 			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
 			    		<span class="caption simple-caption">  
@@ -167,7 +154,7 @@
 	<div class="col-md-6 col-md-offset-3">
 	<?php 
 	foreach ($list_member as $key => $value) {?>
-		<a href="" class="col-md-4 col-xs-12">
+		<a href="" class="col-md-4">
 			<img src="<?php echo base_url("uploads/member/".$value['image']); ?>" class="img-circle">
 			<div class="caption">
 				<h3><?php echo $value['description'];?> <br><?php echo $value['name'];?></h3>

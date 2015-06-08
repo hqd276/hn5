@@ -14,8 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://108.61.180.172/hn5/';
-// $config['base_url']	= 'http://zenithvietnamtours.com/';
+$config['base_url']	= 'http://noithatxaydunghanoi5.com/';
 
 /*
 |--------------------------------------------------------------------------

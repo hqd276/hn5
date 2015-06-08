@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.3.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 24, 2015 at 09:00 PM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Client :  localhost
+-- Généré le :  Dim 07 Juin 2015 à 23:31
+-- Version du serveur :  5.6.22-log
+-- Version de PHP :  5.6.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,41 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `hn5`
+-- Base de données :  `hn5`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `booking`
+-- Structure de la table `banner`
+--
+
+CREATE TABLE IF NOT EXISTS `banner` (
+`id` int(11) NOT NULL,
+  `position` int(11) NOT NULL,
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `order` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `banner`
+--
+
+INSERT INTO `banner` (`id`, `position`, `title`, `image`, `order`, `status`) VALUES
+(2, 0, 'Phòng ăn Vip nhà hàng Hào Nam', 'image1.jpg', 0, 1),
+(3, 0, 'Căn hộ Hải Phát - Lê Văn Lương', 'image2.jpg', 0, 1),
+(4, 0, 'Căn hộ 0816 - T11 time city', 'image.jpg', 0, 1),
+(5, 0, 'Phòng ngủ bé trai - 0502 Times city T11', 'image3.jpg', 0, 1),
+(6, 0, 'Phòng khách gỗ óc chó - 0502 Times city T11', 'image4.jpg', 0, 1),
+(7, 0, 'Phòng đọc sách ', 'image5.jpg', 0, 1),
+(8, 0, 'Phòng ngủ căn 82m2 T11 times city', 'image6.jpg', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `booking`
 --
 
 CREATE TABLE IF NOT EXISTS `booking` (
@@ -40,10 +68,10 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `booking`
+-- Contenu de la table `booking`
 --
 
 INSERT INTO `booking` (`id`, `from`, `to`, `tour`, `tour_id`, `departure`, `destination`, `adult`, `children`, `email`, `phone`, `content`, `status`) VALUES
@@ -56,98 +84,105 @@ INSERT INTO `booking` (`id`, `from`, `to`, `tour`, `tour_id`, `departure`, `dest
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
 `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
-  `description` text COLLATE utf32_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL,
   `type` tinyint(4) NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Contenu de la table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `description`, `parent`, `type`, `status`) VALUES
-(1, 'Đã thực hiện', '', '', -1, 0, 1),
-(2, 'Đang thực hiện', '', '', -1, 0, 1);
+(1, 'Tổ hợp khu tiện căn hộ, nhà hàng, giải trí trung tâm đào tạo nguồn nhân lực LOD', 'image2.jpg', 'Tổ hộp công trình của trung tâm đào tạo nguồn nhân lực LOD với:\r\nSố lượng 12 phòng căn hộ cho chuyên giai nước ngoài.\r\nKhu nhà hàng và phòng giải trí với phong cách Nhật \r\nKhu quầy hàng tiện ích, bar cafe...\r\n\r\nTổng đầu tư: 1 tỷ 200', 1, 0, 1),
+(2, 'Văn phú victoria', 'image4.jpg', '', 1, 0, 1),
+(3, 'Phòng giải trí trung tâm Nhật', 'image5.jpg', 'Căn hộ cao cấp', 1, 0, 1),
+(4, 'Nhà phố thịnh yên', 'image6.jpg', 'Căn hộ cao cấp', 0, 0, 1),
+(5, 'Căn hộ chung cư diện tích nhỏ Xuân Thuỷ', 'image7.jpg', 'Căn hộ cao cấp', 0, 0, 1),
+(6, 'Nhà hàng phong cách Nhật', 'image8.jpg', '', 1, 0, 1),
+(7, 'Phòng đọc 0502 times city', 'image9.jpg', '', 0, 0, 1),
+(8, 'Căn hộ the pride', 'image11.jpg', '', 1, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery`
+-- Structure de la table `gallery`
 --
 
 CREATE TABLE IF NOT EXISTS `gallery` (
 `id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `title` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
+  `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `order` int(11) NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `gallery`
+-- Contenu de la table `gallery`
 --
 
 INSERT INTO `gallery` (`id`, `category_id`, `title`, `image`, `order`, `status`) VALUES
-(1, 1, 'Bikini 1', '1.jpg', 0, 1),
-(2, 1, 'Bikini 2', '2.jpg', 0, 1),
-(3, 1, 'Bikini 3', '3.jpg', 0, 1),
-(4, 1, 'Bikini 4', '4.jpg', 0, 1),
-(5, 1, 'Bikini 5', '5.jpg', 0, 1),
-(6, 1, 'Bikini 6', '6.jpg', 0, 1),
-(7, 1, 'Bikini 7', '7.jpg', 0, 1),
-(8, 1, 'Bikini 8', '8.jpg', 0, 1),
-(9, 1, 'Bikini 9', '9.jpg', 0, 1),
-(10, 1, 'Bikini 10', '10.jpg', 0, 1),
-(11, 1, 'Bikini 11', '11.jpg', 0, 1),
-(12, 1, 'Bikini 12', '12.jpg', 0, 1),
-(13, 1, 'Bikini 13', '13.jpg', 0, 1),
-(14, 1, 'Bikini 14', '14.jpg', 0, 1),
-(15, 1, 'Bikini 15', '15.jpg', 0, 1),
-(16, 1, 'Bikini 16', '16.jpg', 0, 1),
-(17, 2, 'Cô đơn 1', '17.jpg', 0, 1),
-(18, 2, 'Cô đơn 2', '21.jpg', 0, 1),
-(19, 2, 'Cô đơn 3', '31.jpg', 0, 1),
-(20, 2, 'Cô đơn 4', '41.jpg', 0, 1),
-(21, 2, 'Cô đơn 5', '51.jpg', 0, 1),
-(22, 2, 'Cô đơn 6', '61.jpg', 0, 1),
-(23, 2, 'Cô đơn 7', '71.jpg', 0, 1),
-(24, 2, 'Cô đơn 8', '81.jpg', 0, 1);
+(1, 1, 'Căn hộ tại tòa CT2 Trung Văn', '18.jpg', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Structure de la table `members`
+--
+
+CREATE TABLE IF NOT EXISTS `members` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `order` int(11) NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `members`
+--
+
+INSERT INTO `members` (`id`, `name`, `image`, `description`, `status`, `order`) VALUES
+(2, 'Bạch Đặng Kiên', 'image.jpg', 'Quản lý sáng tạo', 1, 0),
+(3, 'Đào Tiến Đạt', 'image1.jpg', 'Quản lý kỹ thuật', 1, 0),
+(4, ' Đặng Việt Châu', 'image2.jpg', 'Thiết kế', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
 `id` int(11) NOT NULL,
-  `title` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
-  `description` text COLLATE utf32_unicode_ci NOT NULL,
-  `detail` text COLLATE utf32_unicode_ci NOT NULL,
-  `info` text COLLATE utf32_unicode_ci NOT NULL,
-  `tag` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `detail` text COLLATE utf8_unicode_ci NOT NULL,
+  `info` text COLLATE utf8_unicode_ci NOT NULL,
+  `tag` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `author` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `created` int(11) NOT NULL,
   `hot_news` tinyint(4) NOT NULL,
   `home_news` tinyint(4) NOT NULL,
-  `image` varchar(100) COLLATE utf32_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `order` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL,
   `type` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=47 ;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `news`
+-- Contenu de la table `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `detail`, `info`, `tag`, `author`, `category_id`, `created`, `hot_news`, `home_news`, `image`, `order`, `status`, `type`) VALUES
@@ -198,43 +233,43 @@ INSERT INTO `news` (`id`, `title`, `description`, `detail`, `info`, `tag`, `auth
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Structure de la table `settings`
 --
 
 CREATE TABLE IF NOT EXISTS `settings` (
 `id` int(11) NOT NULL,
-  `key` varchar(20) COLLATE utf32_unicode_ci NOT NULL,
-  `value` text COLLATE utf32_unicode_ci
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=6 ;
+  `key` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Contenu de la table `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `value`) VALUES
-(1, 'about', '{"name":"Hanoi5","description":"M\\u1edf \\u0111\\u1ea7u bu\\u1ed5i h\\u1ecdp b\\u00e1o, Ph\\u00f3 ch\\u1ee7 t\\u1ecbch Nguy\\u1ec5n Qu\\u1ed1c H\\u00f9ng cho hay th\\u00e0nh ph\\u1ed1 lu\\u00f4n l\\u1eafng nghe, c\\u1ea7u th\\u1ecb, ti\\u1ebfp thu \\u00fd ki\\u1ebfn ng\\u01b0\\u1eddi d\\u00e2n, c\\u00e1c nh\\u00e0 khoa h\\u1ecdc \\u0111\\u1ec3 x\\u00e2y d\\u1ef1ng Th\\u1ee7 \\u0111\\u00f4 ng\\u00e0y c\\u00e0ng v\\u0103n minh. \\"H\\u00e0 N\\u1ed9i t\\u1eebng c\\u00f3 nh\\u1eefng quy\\u1ebft \\u0111\\u1ecbnh r\\u1ea5t kh\\u00f3 kh\\u0103n nh\\u01b0ng \\u0111em l\\u1ea1i s\\u1ef1 h\\u01b0\\u1edfng \\u1ee9ng c\\u1ee7a ng\\u01b0\\u1eddi d\\u00e2n nh\\u01b0 quy\\u1ebft \\u0111\\u1ecbnh kh\\u00f4ng x\\u00e2y kh\\u00e1ch s\\u1ea1n SAS t\\u1ea1i c\\u00f4ng vi\\u00ean Th\\u1ed1ng Nh\\u1ea5t, kh\\u00f4ng x\\u00e2y d\\u1ef1ng trung t\\u00e2m th\\u01b0\\u01a1ng m\\u1ea1i t\\u1ea1i ch\\u1ee3 19\\/12... Ti\\u1ebfp thu \\u00fd ki\\u1ebfn c\\u00f4ng lu\\u1eadn, Ch\\u1ee7 t\\u1ecbch th\\u00e0nh ph\\u1ed1 \\u0111\\u00e3 c\\u00f3 quy\\u1ebft \\u0111\\u1ecbnh d\\u1eebng vi\\u1ec7c ch\\u1eb7t h\\u1ea1, thay th\\u1ebf c\\u00e2y\\", \\u00f4ng H\\u00f9ng n\\u00f3i.","image":"logo1.png","detail":"<p>M\\u1edf \\u0111\\u1ea7u bu\\u1ed5i h\\u1ecdp b&aacute;o, Ph&oacute; ch\\u1ee7 t\\u1ecbch Nguy\\u1ec5n Qu\\u1ed1c H&ugrave;ng cho hay th&agrave;nh ph\\u1ed1 lu&ocirc;n l\\u1eafng nghe, c\\u1ea7u th\\u1ecb, ti\\u1ebfp thu &yacute; ki\\u1ebfn ng\\u01b0\\u1eddi d&acirc;n, c&aacute;c nh&agrave; khoa h\\u1ecdc \\u0111\\u1ec3 x&acirc;y d\\u1ef1ng Th\\u1ee7 \\u0111&ocirc; ng&agrave;y c&agrave;ng v\\u0103n minh. \\"H&agrave; N\\u1ed9i t\\u1eebng c&oacute; nh\\u1eefng quy\\u1ebft \\u0111\\u1ecbnh r\\u1ea5t kh&oacute; kh\\u0103n nh\\u01b0ng \\u0111em l\\u1ea1i s\\u1ef1 h\\u01b0\\u1edfng \\u1ee9ng c\\u1ee7a ng\\u01b0\\u1eddi d&acirc;n nh\\u01b0 quy\\u1ebft \\u0111\\u1ecbnh kh&ocirc;ng x&acirc;y kh&aacute;ch s\\u1ea1n SAS t\\u1ea1i c&ocirc;ng vi&ecirc;n Th\\u1ed1ng Nh\\u1ea5t, kh&ocirc;ng x&acirc;y d\\u1ef1ng trung t&acirc;m th\\u01b0\\u01a1ng m\\u1ea1i t\\u1ea1i ch\\u1ee3 19\\/12... Ti\\u1ebfp thu &yacute; ki\\u1ebfn c&ocirc;ng lu\\u1eadn, Ch\\u1ee7 t\\u1ecbch th&agrave;nh ph\\u1ed1 \\u0111&atilde; c&oacute; quy\\u1ebft \\u0111\\u1ecbnh d\\u1eebng vi\\u1ec7c ch\\u1eb7t h\\u1ea1, thay th\\u1ebf c&acirc;y\\", &ocirc;ng H&ugrave;ng n&oacute;i.<\\/p>"}'),
+(1, 'about', '{"name":"Hanoi5","description":"C\\u00f4ng ty \\u0111\\u01b0\\u1ee3c th\\u00e0nh l\\u1eadp t\\u1ef1 n\\u0103m 2007 N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 ho\\u1ea1t \\u0111\\u1ed9ng trong l\\u0129nh v\\u1ef1c t\\u01b0 v\\u1ea5n thi\\u1ebft k\\u1ebf, thi c\\u00f4ng n\\u1ed9i th\\u1ea5t v\\u00e0 \\u0111ang kh\\u1eb3ng \\u0111\\u1ecbnh v\\u1ecb tr\\u00ed c\\u1ee7a m\\u00ecnh l\\u00e0 \\u0111\\u01a1n v\\u1ecb thi c\\u00f4ng n\\u1ed9i th\\u1ea5t uy t\\u00edn h\\u00e0ng \\u0111\\u1ea7u t\\u1ea1i H\\u00e0 N\\u1ed9i.\\r\\n\\u0110\\u1ed9i ng\\u0169 c\\u00f4ng ty ch\\u00fang t\\u00f4i l\\u00e0 nh\\u1eefng ng\\u01b0\\u1eddi chuy\\u00ean nghi\\u1ec7p, nghi\\u00eam t\\u00fac t\\u1eadn t\\u00e2m v\\u01a1ia c\\u00f4ng vi\\u1ec7c, l\\u00e0 n\\u01a1i \\u0111\\u1ec3 b\\u1ea1n y\\u00ean t\\u00e2m g\\u1eedi g\\u1eafm kh\\u00f4ng gian s\\u1ed1ng c\\u1ee7a m\\u00ecnh. C\\u00f4ng ty t\\u1ed3n t\\u1ea1i d\\u1ef1a tr\\u00ean l\\u00f2ng tin c\\u1ee7a kh\\u00e1ch h\\u00e0ng th\\u00f4ng qua c\\u00e1c s\\u1ea3n ph\\u1ea9m thi\\u1ebft k\\u1ebf v\\u00e0 \\u0111\\u00e3 thi c\\u00f4ng cho kh\\u00e1ch h\\u00e0ng. H\\u00e3y li\\u00ean h\\u1ec7 v\\u1edbi ch\\u00fang t\\u00f4i \\u0111\\u1ec3 c\\u00f3 \\u0111\\u01b0\\u1ee3c t\\u01b0 v\\u1ea5n t\\u1ed1t nh\\u1ea5t.\\r\\nC\\u00c1C B\\u01af\\u1edaC \\u0110\\u1ec2 C\\u00d3 KH\\u00d4NG GIAN S\\u1ed0NG HO\\u00c0N H\\u1ea2O\\r\\nB\\u01b0\\u1edbc 1: Th\\u1ea3o lu\\u1eadn \\u00fd t\\u01b0\\u1edfng v\\u1edbi ki\\u1ebfn tr\\u00fac s\\u01b0\\r\\n\\u0110\\u00e2y l\\u00e0 giai \\u0111o\\u1ea1n s\\u01a1 kh\\u1edfi \\u0111\\u1ea7u ti\\u00ean khi ch\\u1ee7 nh\\u00e0 ti\\u1ebfp x\\u00fac v\\u1edbi c\\u00f4ng ty thi\\u1ebft k\\u1ebf \\u0111\\u1ec3 trao \\u0111\\u1ed5i cung c\\u1ea5p th\\u00f4ng tin, \\u00fd t\\u01b0\\u1edfng, nhu c\\u1ea7u v\\u1ec1 thi\\u1ebft k\\u1ebf n\\u1ed9i th\\u1ea5t c\\u1ee7a ch\\u1ee7 nh\\u00e0 cho ki\\u1ebfn tr\\u00fac s\\u01b0.\\r\\nT\\u1eeb c\\u00e1c th\\u00f4ng tin, \\u00fd t\\u01b0\\u1edfng, nhu c\\u1ea7u m\\u00e0 kh\\u00e1ch h\\u00e0ng cung c\\u1ea5p ki\\u1ebfn tr\\u00fac s\\u01b0 s\\u1ebd t\\u01b0 v\\u1ea5n c\\u00e1c th\\u00f4ng tin ban \\u0111\\u1ea7u v\\u1ec1 phong c\\u00e1ch thi\\u1ebft k\\u1ebf, b\\u1ed1 tr\\u00ed kh\\u00f4ng gian t\\u1ed1i \\u01b0u, l\\u1ef1a ch\\u1ecdn v\\u1eadt li\\u1ec7u thi\\u1ebft b\\u1ecb ph\\u1ee5 ki\\u1ec1n ph\\u00f9 h\\u1ee3p v\\u1edbi mong mu\\u1ed1n c\\u1ee7a ch\\u1ee7 nh\\u00e0 c\\u0169ng nh\\u01b0 t\\u00ecnh h\\u00ecnh t\\u00e0i ch\\u00ednh\\u2026 nh\\u1eb1m gi\\u00fap ch\\u1ee7 \\u0111\\u1ea7u t\\u01b0 c\\u00f3 c\\u00e1c quy\\u1ebft \\u0111\\u1ecbnh ch\\u00ednh x\\u00e1c ngay t\\u1eeb ban \\u0111\\u1ea7u.\\r\\nB\\u01b0\\u1edbc 2: Kh\\u1ea3o s\\u00e1t hi\\u1ec7n tr\\u1ea1ng c\\u00f4ng tr\\u00ecnh\\r\\nKi\\u1ebfn tr\\u00fac s\\u01b0, b\\u1ed9 ph\\u1eadn k\\u1ef9 thu\\u1eadt s\\u1ebd tr\\u1ef1c ti\\u1ebfp \\u0111\\u1ebfn hi\\u1ec7n tr\\u1ea1ng c\\u00f4ng tr\\u00ecnh \\u0111\\u1ec3 \\u0111o \\u0111\\u1ea1c kh\\u1ea3o s\\u00e1t hi\\u1ec7n tr\\u1ea1ng kh\\u00f4ng gian t\\u1ed5ng th\\u1ec3 (khu \\u0111\\u1ea5t, ph\\u00f2ng kh\\u00e1ch, ph\\u00f2ng ng\\u1ee7, ph\\u00f2ng b\\u1ebfp \\u2026).\\r\\nC\\u00e1c s\\u1ed1 li\\u1ec7u k\\u00edch th\\u01b0\\u1edbc n\\u00e0y \\u0111\\u01b0\\u1ee3c thu th\\u1eadp \\u0111\\u1ec3 gi\\u00fap ki\\u1ebfn tr\\u00fac s\\u01b0 thi\\u1ebft k\\u1ebf n\\u1ed9i th\\u1ea5t c\\u1ee7a N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 thi\\u1ebft k\\u1ebf v\\u00e0 \\u0111\\u01b0a ra c\\u00e1c gi\\u1ea3i ph\\u00e1p v\\u1ec1 kh\\u00f4ng gian, c\\u00e1ch b\\u00e0i tr\\u00ed gi\\u00fap gia ch\\u1ee7 kh\\u1eafc ph\\u1ee5c v\\u00e0 t\\u1ed1i \\u01b0u kh\\u00f4ng gian s\\u1ed1ng c\\u1ee7a m\\u00ecnh.\\r\\nL\\u00fac n\\u00e0y h\\u1ee3p \\u0111\\u1ed3ng thi\\u1ebft k\\u1ebf n\\u1ed9i th\\u1ea5t (ho\\u1eb7c ki\\u1ebfn tr\\u00fac, t\\u1ee7 b\\u1ebfp, s\\u00e2n v\\u01b0\\u1eddn\\u2026) \\u0111\\u01b0\\u1ee3c k\\u00fd k\\u1ebft, trong \\u0111\\u00f3 ch\\u1ec9 r\\u00f5 c\\u00e1c s\\u1ea3n ph\\u1ea9m m\\u00e0 gia ch\\u1ee7 nh\\u1eadn \\u0111\\u01b0\\u1ee3c khi h\\u1ee3p \\u0111\\u1ed3ng thi\\u1ebft k\\u1ebf n\\u00e0y k\\u1ebft th\\u00fac, \\u0111\\u00f3 l\\u00e0 to\\u00e0n b\\u1ed9 h\\u1ed3 s\\u01a1 thi\\u1ebft k\\u1ebf g\\u1ed3m: C\\u00e1c b\\u1ea3n v\\u1ebd ph\\u1ed1i c\\u1ea3nh, 3D, b\\u1ea3n v\\u1ebd k\\u1ef9 thu\\u1eadt, d\\u1ef1 to\\u00e1n, thi\\u1ebft b\\u1ecb, v\\u1eadt li\\u1ec7u \\u2026\\r\\nB\\u01b0\\u1edbc 3: Thi\\u1ebft k\\u1ebf s\\u01a1 b\\u1ed9 ki\\u1ebfn tr\\u00fac, n\\u1ed9i th\\u1ea5t nh\\u00e0\\r\\nT\\u1eeb nh\\u1eefng th\\u00f4ng tin thu th\\u1eadp \\u0111\\u01b0\\u1ee3c, ki\\u1ebfn tr\\u00fac s\\u01b0 ho\\u1eb7c chuy\\u00ean gia thi\\u1ebft k\\u1ebf n\\u1ed9i th\\u1ea5t s\\u1ebd l\\u00ean b\\u1ea3n thi\\u1ebft k\\u1ebf s\\u01a1 b\\u1ed9. B\\u1ea3n thi\\u1ebft k\\u1ebf s\\u01a1 b\\u1ed9 n\\u00e0y s\\u1ebd c\\u00f3 b\\u1ea3n v\\u1ebd m\\u1eb7t b\\u1eb1ng b\\u1ed1 tr\\u00ed tham kh\\u1ea3o, k\\u00e8m theo nh\\u1eefng h\\u00ecnh \\u1ea3nh t\\u01b0 li\\u1ec7u c\\u00f3 t\\u00ednh ch\\u1ea5t g\\u1ee3i \\u00fd, t\\u01b0 v\\u1ea5n. Th\\u00f4ng qua \\u0111\\u00f3 kh\\u00e1ch h\\u00e0ng s\\u1ebd \\u0111\\u01b0a ra \\u00fd ki\\u1ebfn, \\u00fd t\\u01b0\\u1edfng v\\u00e0 nhu c\\u1ea7u c\\u1ee7a m\\u00ecnh \\u0111\\u1ec3 ng\\u01b0\\u1eddi thi\\u1ebft k\\u1ebf c\\u00f3 th\\u1ec3 ch\\u1ec9nh s\\u1eeda. C\\u00f4ng \\u0111o\\u1ea1n n\\u00e0y c\\u00f3 th\\u1ec3 l\\u00e0m trong m\\u1ed9t v\\u00e0i l\\u1ea7n khi ti\\u1ebfp x\\u00fac trao \\u0111\\u1ed5i gi\\u1eefa hai b\\u00ean \\u0111\\u1ec3 c\\u00f3 th\\u1ec3 ho\\u00e0n th\\u00e0nh.\\r\\nKhi c\\u00e1c \\u00fd t\\u01b0\\u1edfng ch\\u1ee7 \\u0111\\u1ea1o \\u0111\\u00e3 ph\\u00f9 h\\u1ee3p \\u0111\\u00e1p \\u1ee9ng \\u0111\\u00fang y\\u00eau c\\u1ea7u ch\\u1ee7 nh\\u00e0, ph\\u00f9 h\\u1ee3p v\\u1edbi kh\\u00f4ng gian s\\u1ed1ng m\\u00e0 ki\\u1ebfn tr\\u00fac s\\u01b0 t\\u00ednh to\\u00e1n nghi\\u00ean c\\u1ee9u, ki\\u1ebfn tr\\u00fac s\\u01b0 v\\u00e0 chuy\\u00ean gia thi\\u1ebft k\\u1ebf n\\u1ed9i th\\u1ea5t s\\u1ebd th\\u1ef1c hi\\u1ec7n b\\u01b0\\u1edbc thi\\u1ebft k\\u1ebf chi ti\\u1ebft.\\r\\nB\\u01b0\\u1edbc 4: Thi\\u1ebft k\\u1ebf chi ti\\u1ebft n\\u1ed9i th\\u1ea5t, ki\\u1ebfn tr\\u00fac\\r\\nTrong giai \\u0111o\\u1ea1n n\\u00e0y ki\\u1ebfn tr\\u00fac s\\u01b0, chuy\\u00ean gia thi\\u1ebft k\\u1ebf ho\\u00e0n th\\u00e0nh c\\u00e1c thi\\u1ebft k\\u1ebf k\\u1ef9 thu\\u1eadt, h\\u00ecnh \\u1ea3nh s\\u1ea3n ph\\u1ea9m n\\u1ed9i th\\u1ea5t trong qu\\u00e1 tr\\u00ecnh n\\u00e0y \\u0111\\u00e3 kh\\u00e1 chi ti\\u1ebft, g\\u1ed3m: H\\u00ecnh \\u1ea3nh 3D, ph\\u1ed1i c\\u1ea3nh, c\\u00e1c b\\u1ea3n v\\u1ebd k\\u1ef9 thu\\u1eadt, thi\\u1ebft b\\u1ecb v\\u00e0 v\\u1eadt li\\u1ec7u c\\u01a1 b\\u1ea3n s\\u1eed d\\u1ee5ng .\\r\\nB\\u01b0\\u1edbc 5:  Duy\\u1ec7t ph\\u01b0\\u01a1ng \\u00e1n thi\\u1ebft k\\u1ebf ki\\u1ebfn tr\\u00fac, n\\u1ed9i th\\u1ea5t\\r\\n\\u1ede giai \\u0111o\\u1ea1n n\\u00e0y kh\\u00e1ch h\\u00e0ng s\\u1ebd \\u0111\\u01b0\\u1ee3c cung c\\u1ea5p chi ti\\u1ebft v\\u1ec1 c\\u00e1c ph\\u01b0\\u01a1ng \\u00e1n thi\\u1ebft k\\u1ebf \\u0111\\u01b0\\u1ee3c x\\u00e2y d\\u1ef1ng c\\u0103n c\\u1ee9 theo s\\u1ed1 li\\u1ec7u kh\\u1ea3o s\\u00e1t v\\u00e0 y\\u00eau c\\u1ea7u c\\u1ee7a kh\\u00e1ch h\\u00e0ng. S\\u1ea3n ph\\u1ea9m giai \\u0111o\\u1ea1n n\\u00e0y gi\\u00fap kh\\u00e1ch h\\u00e0ng h\\u00ecnh dung t\\u1ed5ng th\\u1ec3 to\\u00e0n b\\u1ed9 c\\u00f4ng tr\\u00ecnh n\\u1ed9i th\\u1ea5t, ki\\u1ebfn tr\\u00fac c\\u1ee7a m\\u00ecnh.\\r\\nT\\u1eeb b\\u1ea3n thi\\u1ebft k\\u1ebf giai \\u0111o\\u1ea1n n\\u00e0y n\\u1ebfu kh\\u00e1ch h\\u00e0ng ch\\u01b0a tho\\u1ea3 m\\u00e3n h\\u1ebft, kh\\u00e1ch h\\u00e0ng c\\u00f3 th\\u1ec3 y\\u00eau c\\u1ea7u ch\\u1ec9nh s\\u1eeda \\u0111\\u1ec3 \\u0111\\u1ea1t t\\u1edbi ph\\u01b0\\u01a1ng \\u00e1n t\\u1ed1i \\u01b0u nh\\u1ea5t theo nhu c\\u1ea7u c\\u1ee7a m\\u00ecnh.\\r\\nB\\u01b0\\u1edbc 6: L\\u1eadp d\\u1ef1 to\\u00e1n kinh ph\\u00ed thi c\\u00f4ng c\\u00f4ng tr\\u00ecnh n\\u1ed9i th\\u1ea5t, ki\\u1ebfn tr\\u00fac\\r\\nB\\u1ed9 ph\\u1eadn d\\u1ef1 to\\u00e1n b\\u00e1o gi\\u00e1 c\\u1ee7a N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 d\\u1ef1a tr\\u00ean c\\u01a1 s\\u1edf thi\\u1ebft k\\u1ebf \\u0111\\u00e3 \\u0111\\u01b0\\u1ee3c 2 b\\u00ean th\\u00f4ng qua s\\u1ebd l\\u00ean d\\u1ef1 to\\u00e1n chi ti\\u1ebft c\\u00e1c h\\u1ea1ng m\\u1ee5c \\u0111\\u1ec3 c\\u00f3 \\u0111\\u01b0\\u1ee3c t\\u1ed5ng chi ph\\u00ed ch\\u00ednh x\\u00e1c c\\u1ee7a c\\u00f4ng tr\\u00ecnh thi\\u1ebft k\\u1ebf cung c\\u1ea5p cho kh\\u00e1ch h\\u00e0ng c\\u1ee7a m\\u00ecnh.\\r\\nTrong h\\u1ed3 s\\u01a1 d\\u1ef1 to\\u00e1n s\\u1ebd c\\u00f3 \\u0111\\u1ea7y \\u0111\\u1ee7 c\\u00e1c h\\u1ea1ng m\\u1ee5c, \\u0111\\u01a1n gi\\u00e1 th\\u1ef1c t\\u1ebf nh\\u01b0:\\r\\n- Kh\\u1ed1i l\\u01b0\\u1ee3ng lo\\u1ea1i v\\u1eadt li\\u1ec7u thi c\\u00f4ng c\\u1ee7a v\\u1eadt li\\u1ec7u g\\u1ed7, k\\u00ednh, \\u0111\\u00e1 \\u2026 v\\u00e0 gi\\u00e1 th\\u00e0nh c\\u1ee7a ch\\u00fang.\\r\\n- S\\u1ed1 l\\u01b0\\u1ee3ng, \\u0111\\u01a1n gi\\u00e1 ph\\u1ee5 ki\\u1ec7n, thi\\u1ebft b\\u1ecb, th\\u00f4ng tin s\\u1ea3n ph\\u1ea9m\\r\\nT\\u1eeb h\\u1ed3 s\\u01a1 d\\u1ef1 to\\u00e1n n\\u00e0y kh\\u00e1ch h\\u00e0ng c\\u00f3 th\\u1ec3 c\\u00e2n \\u0111\\u1ed1i, \\u0111i\\u1ec1u ch\\u1ec9nh gi\\u00e1, t\\u0103ng gi\\u1ea3m \\u0111i c\\u0103n c\\u1ee9 v\\u00e0o vi\\u1ec7c l\\u1ef1a ch\\u1ecdn ch\\u1ee7ng lo\\u1ea1i v\\u1eadt li\\u1ec7u, ph\\u1ee5 ki\\u1ec7n, thi\\u1ebft b\\u1ecb ph\\u00f9 h\\u1ee3p.\\r\\nB\\u01b0\\u1edbc 7: Thanh l\\u00fd h\\u1ee3p \\u0111\\u1ed3ng thi\\u1ebft k\\u1ebf v\\u00e0 th\\u01b0\\u01a1ng th\\u1ea3o v\\u1ec1 h\\u1ee3p \\u0111\\u1ed3ng thi c\\u00f4ng\\r\\nGiai \\u0111o\\u1ea1n n\\u00e0y N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 s\\u1ebd b\\u00e0n giao to\\u00e0n b\\u1ed9 s\\u1ea3n ph\\u1ea9m thi\\u1ebft k\\u1ebf cho kh\\u00e1ch h\\u00e0ng g\\u1ed3m c\\u00f3: C\\u00e1c h\\u00ecnh v\\u1ebd 3D, ph\\u1ed1i c\\u1ea3nh c\\u00f4ng tr\\u00ecnh, c\\u00e1c b\\u1ea3n v\\u1ebd k\\u1ef9 thu\\u1eadt chi ti\\u1ebft, d\\u1ef1 to\\u00e1n chi ph\\u00ed (v\\u1eadt li\\u1ec7u, thi\\u1ebft b\\u1ecb, ph\\u1ee5 ki\\u1ec7n\\u2026)\\r\\nT\\u1eeb \\u0111\\u00e2y qu\\u00fd kh\\u00e1ch c\\u00f3 th\\u1ec3 \\u00a0t\\u00ecm hi\\u1ec3u th\\u00eam, xem x\\u00e9t n\\u0103ng l\\u1ef1c s\\u1ea3n xu\\u1ea5t thi c\\u00f4ng tr\\u1ecdn g\\u00f3i n\\u1ed9i th\\u1ea5t c\\u1ee7a N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 d\\u1ef1a tr\\u00ean c\\u00f4ng tr\\u00ecnh N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 \\u0111\\u00e3 thi c\\u00f4ng ho\\u00e0n thi\\u1ec7n ti\\u1ebfn t\\u1edbi ho\\u00e0n th\\u00e0nh vi\\u1ec7c k\\u00fd k\\u1ebft h\\u1ee3p \\u0111\\u1ed3ng giao cho x\\u01b0\\u1edfng ti\\u1ebfn h\\u00e0nh s\\u1ea3n xu\\u1ea5t.\\r\\nB\\u01b0\\u1edbc 8: L\\u1eafp \\u0111\\u1eb7t s\\u1ea3n ph\\u1ea9m n\\u1ed9i th\\u1ea5t t\\u1ea1i nh\\u00e0 kh\\u00e1ch h\\u00e0ng\\r\\nVi\\u1ec7c thi c\\u00f4ng t\\u1ea1i nh\\u00e0 kh\\u00e1ch h\\u00e0ng c\\u00f3 th\\u1ec3 k\\u00e9o d\\u00e0i m\\u1ed9t v\\u00e0i ng\\u00e0y hay nhi\\u1ec1u tu\\u1ea7n t\\u00f9y theo kh\\u1ed1i l\\u01b0\\u1ee3ng v\\u00e0 h\\u1ea1ng m\\u1ee5c thi c\\u00f4ng. \\u1ede giai \\u0111o\\u1ea1n n\\u00e0y vi\\u1ec7c thi c\\u00f4ng c\\u00e1c h\\u1ea1ng m\\u1ee5c t\\u1ea1i c\\u00f4ng tr\\u00ecnh s\\u1ebd lu\\u00f4n c\\u00f3 gi\\u00e1m s\\u00e1t c\\u00f4ng tr\\u00ecnh c\\u1ee7a N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 c\\u00f3 m\\u1eb7t \\u0111\\u1ec3 gi\\u00e1m s\\u00e1t v\\u1ec1 ch\\u1ea5t l\\u01b0\\u1ee3ng v\\u00e0 t\\u1ea5t c\\u1ea3 m\\u1ecdi vi\\u1ec7c ph\\u00e1t sinh, gi\\u00fap kh\\u00e1ch h\\u00e0ng ho\\u00e0n to\\u00e0n y\\u00ean t\\u00e2m v\\u1ec1 ch\\u1ea5t l\\u01b0\\u1ee3ng khi kh\\u00f4ng c\\u00f3 \\u0111\\u1ee7 th\\u1eddi gian \\u0111\\u1ec3 gi\\u00e1m s\\u00e1t t\\u1ea1i c\\u00f4ng tr\\u00ecnh.\\r\\nB\\u01b0\\u1edbc 9:  B\\u00e0n giao \\u2013 thanh l\\u00fd h\\u1ee3p \\u0111\\u1ed3ng.                                                                     \\r\\n Khi c\\u00f4ng tr\\u00ecnh ho\\u00e0n t\\u1ea5t, qu\\u00fd kh\\u00e1ch s\\u1ebd c\\u00f9ng k\\u1ef9 thu\\u1eadt gi\\u00e1m s\\u00e1t c\\u1ee7a N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 ti\\u1ebfn h\\u00e0nh nghi\\u1ec7m thu v\\u1ec1 kh\\u1ed1i l\\u01b0\\u01a1ng, s\\u1ed1 l\\u01b0\\u1ee3ng, ch\\u1ea5t l\\u01b0\\u1ee3ng c\\u1ee7a s\\u1ea3n ph\\u1ea9m. K\\u00fd bi\\u00ean b\\u1ea3n b\\u00e0n giao nghi\\u1ec7m thu v\\u00e0 thanh l\\u00fd h\\u1ee3p \\u0111\\u1ed3ng. Sau khi \\u0111\\u00e3 ho\\u00e0n th\\u00e0nh xong t\\u1ea5t c\\u1ea3 c\\u00e1c b\\u01b0\\u1edbc kh\\u00e1ch h\\u00e0ng \\u0111\\u00e3 c\\u00f3 m\\u1ed9t kh\\u00f4ng gian s\\u1ed1ng v\\u1eeba \\u00fd N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5 s\\u1ebd ti\\u1ebfp t\\u1ee5c theo s\\u00e1t c\\u00f4ng tr\\u00ecnh trong qu\\u00e1 tr\\u00ecnh kh\\u00e1ch h\\u00e0ng s\\u1eeda d\\u1ee5ng. M\\u1ecdi nhu c\\u1ea7u c\\u1ea7n h\\u1ed7i tr\\u1ee3 c\\u1ee7a kh\\u00e1ch h\\u00e0ng \\u0111\\u1ec1u s\\u1ebd \\u0111\\u01b0\\u1ee3c \\u0111\\u00e1p \\u1ee9ng.\\r\\n\\r\\n","image":"logo1.png","detail":false}'),
 (2, 'phone', '{"name":"Phone","description":"0916287899\\/ 0915698083"}'),
-(3, 'email', '{"name":"email","description":"NOITHATHN5@GMAIL.COM","image":"15651506796_19d7dd0844_z.jpg"}'),
-(4, 'address', '{"name":"address","description":"S\\u1ed0 33 NG\\u00d5 28 NG\\u1ee4Y NH\\u01af CON TUM - THANH XU\\u00c2N - H\\u00c0 N\\u1ed8I","image":"chuong.jpg"}'),
-(5, 'facebook', '{"name":"facebook","description":"FACEBOOK.COM\\/HNFIVE","image":"131_7158.JPG"}');
+(3, 'email', '{"name":"email","description":"noithathn5@gmail.com","image":"15651506796_19d7dd0844_z.jpg"}'),
+(4, 'address', '{"name":"address","description":"Ph\\u00f2ng 216 - T\\u1ea7ng 2 - T\\u00f2a nh\\u00e0 G3D - V\\u0169 Ph\\u1ea1m H\\u00e0m - Y\\u00ean H\\u00f2a - C\\u1ea7u Gi\\u1ea5y - H\\u00e0 N\\u1ed9i","image":"chuong.jpg"}'),
+(5, 'facebook', '{"name":"facebook","description":"N\\u1ed9i Th\\u1ea5t H\\u00e0 N\\u1ed9i 5","image":"131_7158.JPG"}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supports`
+-- Structure de la table `supports`
 --
 
 CREATE TABLE IF NOT EXISTS `supports` (
 `id` int(11) NOT NULL,
-  `email` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf32_unicode_ci NOT NULL,
-  `content` text COLLATE utf32_unicode_ci NOT NULL,
-  `reply` text COLLATE utf32_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `reply` text COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `supports`
+-- Contenu de la table `supports`
 --
 
 INSERT INTO `supports` (`id`, `email`, `phone`, `content`, `reply`, `status`) VALUES
@@ -245,106 +280,128 @@ INSERT INTO `supports` (`id`, `email`, `phone`, `content`, `reply`, `status`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
 `id` int(11) NOT NULL,
-  `email` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `status`) VALUES
 (1, 'dunghq87@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(2, 'doanninh@egame.vn', 'e10adc3949ba59abbe56e057f20f883e', 1);
+(2, 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables exportées
 --
 
 --
--- Indexes for table `booking`
+-- Index pour la table `banner`
+--
+ALTER TABLE `banner`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `booking`
 --
 ALTER TABLE `booking`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Index pour la table `categories`
 --
 ALTER TABLE `categories`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gallery`
+-- Index pour la table `gallery`
 --
 ALTER TABLE `gallery`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
+-- Index pour la table `members`
+--
+ALTER TABLE `members`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `news`
 --
 ALTER TABLE `news`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Index pour la table `settings`
 --
 ALTER TABLE `settings`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `supports`
+-- Index pour la table `supports`
 --
 ALTER TABLE `supports`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
--- AUTO_INCREMENT for table `booking`
+-- AUTO_INCREMENT pour la table `banner`
+--
+ALTER TABLE `banner`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT pour la table `booking`
 --
 ALTER TABLE `booking`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `gallery`
+-- AUTO_INCREMENT pour la table `gallery`
 --
 ALTER TABLE `gallery`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
--- AUTO_INCREMENT for table `news`
+-- AUTO_INCREMENT pour la table `members`
+--
+ALTER TABLE `members`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT pour la table `settings`
 --
 ALTER TABLE `settings`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `supports`
+-- AUTO_INCREMENT pour la table `supports`
 --
 ALTER TABLE `supports`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;

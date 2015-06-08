@@ -49,12 +49,11 @@ class Banner extends MX_Controller{
 		$this->load->helper(array('form')); 
 		$this->load->helper(array('util')); 
 
-		$dataC = array(
-						// 'position' =>'',
+		$dataC = array('position' =>0,
 						'title' =>'',
 						'image' =>'',
-						'order' =>'',
-						'status' =>'');
+						'order' =>0,
+						'status' =>0);
 		
 		if ($this->input->post('submit') == "ok") {
 			$dataC['title'] = $this->input->post('title'); 
