@@ -1,9 +1,12 @@
 .footer {
-	background-color: #292929;
+	background-color: #892424;
 	color: #fff;
 	overflow: hidden;
 	padding: 30px;
 }
 .footer img {
 	width: 70px;
+}
+.footer a {
+	color: #fff;
 }

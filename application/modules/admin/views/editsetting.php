@@ -70,12 +70,12 @@ tinymce.init({
 			</div>
 		</div>
 		<?php if  ($item['key']=='about') {?>
-		<!-- <div class="form-group col-sm-12">
+		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Detail</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" id="detail" name="detail" placeholder="Detail"><?php echo $item['detail']; ?></textarea>
 			</div>
-		</div> -->
+		</div>
 		<?php }?>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">

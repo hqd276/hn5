@@ -31,21 +31,25 @@
 </div>
 <div id="about" class="about text-center" data-sr>
 	<h1 class="text-uppercase">giới thiệu</h1>
-	<p class="text-justify col-md-6 col-md-offset-3"><?php echo $setting['about']['data']->description;?></p>
+	<p class="text-justify col-md-6 col-md-offset-3">
+		<?php echo $setting['about']['data']->description;?>
+		<br>
+		<a class="pull-right" href="<?php echo base_url('about');?>">Xem tiếp</a>
+	</p>
+
 </div>
 <div id="project" class="project" data-sr>
 	<h1 class="text-uppercase">dự án</h1>
-	<a href="#made" aria-controls="made" role="tab" data-toggle="tab" class="btn-default btn-project btn text-uppercase">đã thực hiện</a>
-	<a href="#ongoing" aria-controls="ongoing" role="tab" data-toggle="tab" class="btn-default btn-project btn text-uppercase">đang thực hiện</a>
+
 	<div class="tab-content">
-	  	<div role="tabpanel" class="tab-pane fade in active" id="made">
+	  	<div class="fade in" id="made">
 			  	<!-- Wrapper for slides -->
 			  	<div class="carousel-inner" role="listbox">
 		  		<div class="item active text-center">
-		  		<?php foreach ($cat_made as $key => $value){?>
+		  		<?php foreach ($list_category as $key => $value){?>
 		  			<div class="box col-md-3 col-xs-6 col-center">
 	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
-			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
+			    		<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
 			    		<span class="caption simple-caption">  
 				        <p class="text-uppercase"><?php echo $value['name']; ?> <span class="btn btn-default">Xem</span></p>  
 				        </span>  
@@ -55,25 +59,8 @@
 		  		</div>
 		  		</div>
 	 	</div>
-	  	<div role="tabpanel" class="tab-pane fade" id="ongoing">
-			  	<!-- Wrapper for slides -->
-			  	<div class="carousel-inner" role="listbox">
-		  		<div class="item active text-center">
-		  		<?php foreach ($cat_ongoing as $key => $value){?>
-		  			<div class="box col-md-3 col-xs-6 col-center">
-	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
-			    		<img id="image-6" src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase"><?php echo $value['name']; ?> <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			        </a>
-		    		</div>
-		  		<?php } ?>
-		  		</div>
-		  		</div>
-	  	</div>
 	</div>
-	<?php foreach ($cat_made as $key => $value){?>
+	<?php foreach ($list_category as $key => $value){?>
 	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -85,45 +72,15 @@
 	      		<div id="carousel-<?php echo $value['id']; ?>" class="carousel slide" data-ride="carousel">
 	      			<!-- Wrapper for slides -->
 				  	<div class="carousel-inner" role="listbox">
-		        	<?php if (count($value['items'])>0) 
-		        	foreach ($value['items'] as $k => $v) {?>
-					    <div class="item <?php echo ($v === reset($value['items']))?"active":"" ?>">
-					      	<img src="<?php echo base_url("uploads/gallery/".$v['image']); ?>" alt="...">
+				  		<div class="item active">
+					      	<img src="<?php echo base_url("uploads/categories/".$value['image']); ?>" alt="...">
 					      	<div class="carousel-caption">
-						        <?php echo $v['title']; ?>
+						        <?php echo $value['name']; ?>
 					      	</div>
 					    </div>
-		        	<?php }?>
-	        		</div>
-	        	</div>
-	        	<a class="left carousel-control" href="#carousel-<?php echo $value['id']; ?>" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-			  	</a>
-			  	<a class="right carousel-control" href="#carousel-<?php echo $value['id']; ?>" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-			  	</a>
-	      	</div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-	<?php } ?>
-	<?php foreach ($cat_ongoing as $key => $value){?>
-	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	    	<div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel"><?php echo $value['name']; ?></h4>
-	      	</div>
-	      	<div class="modal-body">
-	      		<div id="carousel-<?php echo $value['id']; ?>" class="carousel slide" data-ride="carousel">
-	      			<!-- Wrapper for slides -->
-				  	<div class="carousel-inner" role="listbox">
 		        	<?php if (count($value['items'])>0) 
 		        	foreach ($value['items'] as $k => $v) {?>
-					    <div class="item <?php echo ($v === reset($value['items']))?"active":"" ?>">
+					    <div class="item ">
 					      	<img src="<?php echo base_url("uploads/gallery/".$v['image']); ?>" alt="...">
 					      	<div class="carousel-caption">
 						        <?php echo $v['title']; ?>

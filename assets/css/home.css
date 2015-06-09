@@ -45,6 +45,13 @@
 .project .carousel-indicators li.active{
 	background-color: #892424;
 }
+.project .carousel-inner>.item img{
+	width: 100%;
+}
+.modal-dialog {
+	width: 95%;
+}
+
 .member {
 	margin-top: 50px;
 	background-color: #7a2f2f;
@@ -134,10 +141,10 @@ body .box .caption {
 
 /** Caption 1: Simple **/
 body .box .simple-caption {
-	height: 70px;
+	height: 100px;
 	width: 100%;
 	display: block;
-	bottom: -70px;
+	bottom: -100px;
 	line-height: 25pt;
 	text-align: center;
 	padding: 20px;
