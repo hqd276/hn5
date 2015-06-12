@@ -41,25 +41,16 @@
 <div id="project" class="project" data-sr>
 	<h1 class="text-uppercase">dự án</h1>
 
-	<div class="tab-content">
-	  	<div class="fade in" id="made">
-			  	<!-- Wrapper for slides -->
-			  	<div class="carousel-inner" role="listbox">
-		  		<div class="item active text-center">
-		  		<?php foreach ($list_category as $key => $value){?>
-		  			<div class="box col-md-3 col-xs-6 col-center">
-	    			<a data-toggle="modal" data-target="#modal<?php echo $value['id']?>" href="#">
-			    		<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
-			    		<span class="caption simple-caption">  
-				        <p class="text-uppercase"><?php echo $value['name']; ?> <span class="btn btn-default">Xem</span></p>  
-				        </span>  
-			        </a>
-		    		</div>
-		  		<?php } ?>
-		  		</div>
-		  		</div>
-	 	</div>
+  	<!-- Wrapper for slides -->
+	<?php foreach ($list_category as $key => $value){?>
+	<div class="box col-center" data-toggle="modal" data-target="#modal<?php echo $value['id']?>" >
+		<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
+		<span class="caption">  
+        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
+        </span>  
 	</div>
+	<?php } ?>
+
 	<?php foreach ($list_category as $key => $value){?>
 	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
@@ -77,6 +68,7 @@
 					      	<div class="carousel-caption">
 						        <?php echo $value['name']; ?>
 					      	</div>
+					      	<img class="logo" src="<?php echo base_url();?>assets/images/logo1.png">
 					    </div>
 		        	<?php if (count($value['items'])>0) 
 		        	foreach ($value['items'] as $k => $v) {?>
@@ -85,6 +77,7 @@
 					      	<div class="carousel-caption">
 						        <?php echo $v['title']; ?>
 					      	</div>
+					      	<img class="logo" src="<?php echo base_url();?>assets/images/logo1.png">
 					    </div>
 		        	<?php }?>
 	        		</div>
@@ -103,8 +96,6 @@
 	</div><!-- /.modal -->
 	<?php } ?>
 </div>
-
-
 
 <div id="member" class="member " data-sr>
 	<h1 class="text-uppercase">thành viên</h1>

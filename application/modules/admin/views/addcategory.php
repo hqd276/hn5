@@ -37,15 +37,6 @@
 			</div>
 		</div>
 		<div class="form-group col-sm-12">
-			<label for="inputEmail3" class="col-sm-2 control-label">Parent</label>
-			<div class="col-sm-10">
-				<select class='form-control' name='parent'>
-					<option value="1" <?php echo ($item['parent'] == 1)?'selected':'';?>> Đã thực hiện </option>
-					<option value="0" <?php echo ($item['parent'] == 0)?'selected':'';?>> Đang thực hiện </option>
-				</select>
-			</div>
-		</div>
-		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Description</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" name="description" placeholder="Description"><?php echo $item['description']; ?></textarea>
