@@ -36,20 +36,20 @@
 		<br>
 		<a class="pull-right" href="<?php echo base_url('about');?>">Xem tiếp</a>
 	</p>
-
 </div>
 <div id="project" class="project" data-sr>
 	<h1 class="text-uppercase">dự án</h1>
-
-  	<!-- Wrapper for slides -->
-	<?php foreach ($list_category as $key => $value){?>
-	<div class="box col-center" data-toggle="modal" data-target="#modal<?php echo $value['id']?>" >
-		<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
-		<span class="caption">  
-        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
-        </span>  
-	</div>
-	<?php } ?>
+	<ul class="list-unstyled">
+	  	<!-- Wrapper for slides -->
+		<?php foreach ($list_category as $key => $value){?>
+		<li class="box" data-toggle="modal" data-target="#modal<?php echo $value['id']?>" >
+			<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
+			<span class="caption">  
+	        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
+	        </span>  
+		</li>
+		<?php } ?>
+	</ul>
 
 	<?php foreach ($list_category as $key => $value){?>
 	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -97,7 +97,9 @@
 	<?php } ?>
 </div>
 
-<div id="member" class="member " data-sr>
+<div class="clearfix"></div>
+
+<div id="member" class="member" data-sr>
 	<h1 class="text-uppercase">thành viên</h1>
 	<div class="col-md-6 col-md-offset-3">
 	<?php 
@@ -105,14 +107,17 @@
 		<a href="" class="col-md-4">
 			<img src="<?php echo base_url("uploads/member/".$value['image']); ?>" class="img-circle">
 			<div class="caption">
-				<h3><?php echo $value['description'];?> <br><?php echo $value['name'];?></h3>
+				<h4><?php echo $value['description'];?></h4>
+				<h3><?php echo $value['name'];?></h3>
 			</div>
 		</a>
 	<?php }
 	?>
 	</div>
 </div>
+
 <div class="clearfix"></div>
+
 <div id="contact" class="contact " data-sr>
 	<h1 class="text-uppercase">liên hệ</h1>
 	<div class="contact-left-block col-md-6 ">
