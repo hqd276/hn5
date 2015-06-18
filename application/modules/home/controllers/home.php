@@ -26,20 +26,31 @@ class Home extends MX_Controller{
 		$this->load->model(array('admin/modelbanner'));
 
 		$list_category = $this->modelcategory->getCategories(array("type"=>0,"status"=>1));
-		// $cat_made = array();
-		// $cat_ongoing = array();
+		$list_parent = array();
+		$list_gallery = array();
 		foreach ($list_category as $key => $value) {
-			$list_category[$key]['items'] = $this->modelgallery->getGallery(array('category_id'=>$value['id']));
+		// 	$childs = $this->modelcategory->getCategories(array("type"=>0,"status"=>1,"parent"=>$value['id']));
+		// 	if(count($childs)>0) {
+		// 		foreach ($childs as $k => $v) {
+		// 			$childs[$k]['items'] = $this->modelgallery->getGallery(array('category_id'=>$v['id']));
+		// 		}
+		// 	}
+			
+		// 	$list_category[$key]['childs'] = $childs;
 
-			// if ($value['parent']==1){
-			// 	$cat_made[] = $value;
-			// }elseif ($value['parent']==0){
-			// 	$cat_ongoing[] = $value;
-			// }
+			if ($value['parent'] == -1) {
+				$list_parent[] = $value;
+			}else{
+				$list_gallery[] = $value;
+			}
 		}
-		// $data['cat_made'] = $cat_made;
-		// $data['cat_ongoing'] = $cat_ongoing;
-		$data['list_category'] = $list_category;
+		if(count($list_gallery)>0)
+			foreach ($list_gallery as $k => $v) {
+				$list_gallery[$k]['items'] = $this->modelgallery->getGallery(array('category_id'=>$v['id']));
+			}
+		$data['list_parent'] = $list_parent;
+		$data['list_gallery'] = $list_gallery;
+
 
 		$banners = $this->modelbanner->getBanner(array('position'=>0));
 		$data['banners'] = $banners;
@@ -49,5 +60,13 @@ class Home extends MX_Controller{
 		$data['list_member'] = $list_member;
 
 		$this->template->build('home',$data);
+	}
+	
+	public function show(){
+		$parent = $this->input->get_post('id'); 
+		$childs = $this->modelcategory->getCategories(array("type"=>0,"status"=>1,"parent"=>$parent));
+		header('Content-type: application/json');
+    	print (json_encode($childs));die;
+    	return;
 	}
 }

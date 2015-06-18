@@ -26,6 +26,15 @@
 			</div>
 		</div>
 		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Parent</label>
+			<div class="col-sm-10">
+				<select class='form-control' name='parent'>
+					<option value='-1' <?php echo ($item['parent'] == -1)?'selected':''?> >- Root -</option>
+					<?php echo $category_box;?>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Image</label>
 			<div class="col-sm-10">
 				<?php 

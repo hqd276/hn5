@@ -41,8 +41,8 @@
 	<h1 class="text-uppercase">dự án</h1>
 	<ul class="list-unstyled">
 	  	<!-- Wrapper for slides -->
-		<?php foreach ($list_category as $key => $value){?>
-		<li class="box" data-toggle="modal" data-target="#modal<?php echo $value['id']?>" >
+		<?php foreach ($list_parent as $key => $value){?>
+		<li class="box" onclick="showChilds(<?php echo $value['id']?>)">
 			<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
 			<span class="caption">  
 	        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
@@ -51,7 +51,11 @@
 		<?php } ?>
 	</ul>
 
-	<?php foreach ($list_category as $key => $value){?>
+	<div class="childs hidden">
+	</div>
+
+
+	<?php foreach ($list_gallery as $key => $value){?>
 	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -134,3 +138,33 @@
 		<li><img src="<?php echo base_url();?>assets/images/contact-fb.png"><?php echo $setting['facebook']['data']->description;?></li>
 	</ul>
 </div>
+
+<script type="text/javascript">
+	
+	function showChilds(pid){
+		$.ajax({
+			url:'http://noithatxaydunghanoi5.com/home/show/',
+			type: 'GET',
+			data: {id : pid},
+			success: function(data) {
+				if (data && data.length) {
+					var str = '<ul class="list-unstyled">';
+					//for(var i=0;i<data.length;i++){
+                    $.each( data, function( key, value ) {
+                    	str += '<li class="col-sm-3 col-xs-6" data-toggle="modal" data-target="#modal'+ value.id +'">';
+						str += '	<img src="/uploads/categories/thumbs/'+ value.image +'" alt="...">';
+						str += '	<span class="caption">';
+					    str += '    <p class="text-uppercase">'+ value.name +'</p>';
+					    str += '    </span>';
+						str += '</li>';
+                    });
+                    str += '</ul>';
+                    $('.childs').html(str).slideDown('slow').removeClass('hidden');
+                }else{
+                	$('.childs').slideUp('slow');
+                }
+			}
+		});
+	}
+
+</script>

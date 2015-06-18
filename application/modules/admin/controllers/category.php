@@ -23,10 +23,11 @@ class Category extends MX_Controller{
 		$data = array();
 		$data['type'] = $type;
 
-		$category = $this->modelcategory->getCategories(array("type"=>$type)," LIMIT 0,10");
+		$category = $this->modelcategory->getCategories(array("type"=>$type,"parent"=>-1)," LIMIT 0,10");
 		if (count($category)>0) {
 			foreach ($category as $key => $value) {
-				# code...
+				$child = $this->modelcategory->getCategories(array("type"=>$type,"parent"=>$value['id']));
+				$category[$key]['child'] = $child;
 			}
 		}
 		$data['list'] = $category;
@@ -48,6 +49,7 @@ class Category extends MX_Controller{
 		// $category = add_array_key("id",$category);
 
 		$dataC = array('name' =>'',
+						'parent' =>'',
 						'description' =>'',
 						'status' =>'',
 						'type' =>'',
@@ -61,6 +63,7 @@ class Category extends MX_Controller{
 			#Kiểm tra điều kiện validate 
 			if($this->form_validation->run() == TRUE){ 
 				$dataC['name'] = $this->input->post('name'); 
+				$dataC['parent'] = $this->input->post('parent'); 
 				$dataC['description'] = $this->input->post('description'); 
 				if ($this->input->post('status'))
 					$dataC['status'] = 1;
@@ -85,7 +88,7 @@ class Category extends MX_Controller{
 			} 
 		}
 
-		// $data['category_box'] = $this->category_box($category, $dataC);
+		$data['category_box'] = $this->category_box($category, $dataC);
 
 		$data['item'] = $dataC;
 		$this->template->build('addcategory',$data);
@@ -114,6 +117,7 @@ class Category extends MX_Controller{
 			#Kiểm tra điều kiện validate 
 			if($this->form_validation->run() == TRUE){ 
 				$dataC['name'] = $this->input->post('name'); 
+				$dataC['parent'] = $this->input->post('parent'); 
 				$dataC['description'] = $this->input->post('description'); 
 				if ($this->input->post('status'))
 					$dataC['status'] = 1;
@@ -139,10 +143,34 @@ class Category extends MX_Controller{
 		}
 		$data['item'] = $dataC;
 
+		$data['category_box'] = $this->category_box($category, $dataC);
+
 		$this->template->build('addcategory',$data);
 	}
 	public function delete($type=0,$id=0){
 		$this->db->delete('categories', array('id' => $id)); 
 		redirect(base_url('/admin/category/index/'.$type));
+	}
+
+	function category_box ($category, $dataC) {
+		$category_box = "";
+		foreach ($category as $key => $value) {
+			if ($value["parent"] == -1) {
+				$category_box.= "<option value='".$value['id']."' ";
+				$category_box.= ($dataC['parent'] == $value['id'])?'selected':'';
+				$category_box.= ">".$value['name']."</option>";
+				// $child = array();
+				foreach ($category as $k => $v) {
+					if ($v["parent"] == $value["id"]){
+						$category_box.= "<option value='".$v['id']."' ";
+						$category_box.= ($dataC['parent'] == $v['id'])?'selected':'';
+						$category_box.= "> -- ".$v['name']."</option>";
+						// $child[] = $v;
+					}
+				}
+				// $category[$key]["child"]= $child;
+			}
+		}
+		return $category_box;
 	}
 }

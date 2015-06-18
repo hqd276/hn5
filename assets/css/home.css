@@ -73,6 +73,28 @@
 	width: 80%;
 }
 
+.childs {
+	margin-top: 30px;
+	float: left;
+	height: 180px;
+}
+.childs img {
+	width: 100%;
+}
+.childs ul li {
+	position: relative;
+	padding: 0;
+	cursor: pointer;
+}
+.childs .caption{
+	position: absolute;
+	width: 100%;
+	background-color: rgba(200,200,200,0.4);
+	bottom: 0;
+	left: 0;
+	color: #fff;
+}
+
 .member {
 	margin-top: 50px;
 	background-color: #7a2f2f;

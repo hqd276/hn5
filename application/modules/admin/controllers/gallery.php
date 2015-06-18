@@ -68,8 +68,8 @@ class Gallery extends MX_Controller{
 		
 		if ($this->input->post('submit') == "ok") {
 			$dataC['title'] = $this->input->post('title'); 
-			$dataC['order'] = $this->input->post('order'); 
-			$dataC['category_id'] = $this->input->post('category_id'); 
+			$dataC['order'] = (int)$this->input->post('order'); 
+			$dataC['category_id'] = (int)$this->input->post('category_id'); 
 
 			if ($this->input->post('status'))
 				$dataC['status'] = 1;
@@ -91,7 +91,7 @@ class Gallery extends MX_Controller{
 		}
 		$this->load->model(array('modelcategory'));
 
-		$category = $this->modelcategory->getCategories();
+		$category = $this->modelcategory->getCategories(array("type"=>0,"parent!"=>-1));
 
 		$data['category_box'] = $this->category_box($category, $dataC);
 
@@ -112,8 +112,8 @@ class Gallery extends MX_Controller{
 		
 		if ($this->input->post('submit') == "ok") {
 			$dataC['title'] = $this->input->post('title'); 
-			$dataC['order'] = $this->input->post('order'); 
-			$dataC['category_id'] = $this->input->post('category_id'); 
+			$dataC['order'] = (int)$this->input->post('order'); 
+			$dataC['category_id'] = (int)$this->input->post('category_id'); 
 
 			if ($this->input->post('status'))
 				$dataC['status'] = 1;
@@ -138,7 +138,7 @@ class Gallery extends MX_Controller{
 		}
 		$this->load->model(array('modelcategory'));
 
-		$category = $this->modelcategory->getCategories(array("type"=>0));
+		$category = $this->modelcategory->getCategories(array("type"=>0,"parent!"=>-1));
 
 		$data['category_box'] = $this->category_box($category, $dataC);
 
@@ -156,8 +156,7 @@ class Gallery extends MX_Controller{
 		foreach ($category as $k => $v) {
 			$category_box.= "<option value='".$v['id']."' ";
 			$category_box.= ($dataC['category_id'] == $v['id'])?'selected':'';
-			$root = ($v['parent']==1)?'Đã thực hiện':'Đang thực hiện';
-			$category_box.= "> [" . $root . "] ".$v['name']."</option>";
+			$category_box.= ">".$v['name']."</option>";
 
 		}
 		// $category[$key]["child"]= $child;

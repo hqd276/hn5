@@ -10,7 +10,7 @@ class ModelCategory extends CI_Model{
 		$strWhere = "";
 		if (is_array($where)) {
 			foreach ($where as $key => $value) {
-				$strWhere .= " AND $key = $value";
+				$strWhere .= " AND $key= $value";
 			}
 		}
 		$strLimit = "";
