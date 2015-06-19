@@ -39,17 +39,19 @@
 </div>
 <div id="project" class="project" data-sr>
 	<h1 class="text-uppercase">dự án</h1>
-	<ul class="list-unstyled">
-	  	<!-- Wrapper for slides -->
-		<?php foreach ($list_parent as $key => $value){?>
-		<li class="box" onclick="showChilds(<?php echo $value['id']?>)">
-			<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
-			<span class="caption">  
-	        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
-	        </span>  
-		</li>
-		<?php } ?>
-	</ul>
+	<div class="list-parent">
+		<ul class="list-unstyled">
+		  	<!-- Wrapper for slides -->
+			<?php foreach ($list_parent as $key => $value){?>
+			<li class="box" onclick="showChilds(<?php echo $value['id']?>)">
+				<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
+				<span class="caption">  
+		        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
+		        </span>  
+			</li>
+			<?php } ?>
+		</ul>
+	</div>
 
 	<div class="childs hidden">
 	</div>
@@ -59,11 +61,8 @@
 	<div class="modal fade" id="modal<?php echo $value['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
-	    	<div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel"><?php echo $value['name']; ?></h4>
-	      	</div>
 	      	<div class="modal-body">
+	      		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
 	      		<div id="carousel-<?php echo $value['id']; ?>" class="carousel slide" data-ride="carousel">
 	      			<!-- Wrapper for slides -->
 				  	<div class="carousel-inner" role="listbox">
@@ -166,5 +165,11 @@
 			}
 		});
 	}
+
+	$('.list-parent .box').hover(function(){
+		$(this).children('.caption p').addClass('opacity');
+	}, function() {
+	    $(this).children('.caption p').removeClass('opacity');
+	});
 
 </script>
