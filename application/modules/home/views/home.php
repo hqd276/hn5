@@ -167,9 +167,9 @@
 	}
 
 	$('.list-parent .box').hover(function(){
-		$(this).children('.caption p').addClass('opacity');
+		$(this).children('.caption').children('p').addClass('opacity');
 	}, function() {
-	    $(this).children('.caption p').removeClass('opacity');
+	    $(this).children('.caption').children('p').removeClass('opacity');
 	});
 
 </script>
