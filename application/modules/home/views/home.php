@@ -45,9 +45,9 @@
 			<?php foreach ($list_parent as $key => $value){?>
 			<li class="box" onclick="showChilds(<?php echo $value['id']?>)">
 				<img id="image-6" src="<?php echo base_url("uploads/categories/thumbs/".$value['image']); ?>" alt="...">
-				<span class="caption">  
+				<!-- <span class="caption">  
 		        <p class="text-uppercase"><?php echo $value['name']; ?></p>  
-		        </span>  
+		        </span>   -->
 			</li>
 			<?php } ?>
 		</ul>

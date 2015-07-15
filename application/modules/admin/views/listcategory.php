@@ -5,7 +5,7 @@
 	<table class="table table-bordered table-hover">
 		<thead>
 			<th>Id</th>
-			<th>Email</th>
+			<th>Name</th>
 			<th>Image</th>
 			<th>Status</th>
 			<th>Action</th>
@@ -19,13 +19,13 @@
 				<td>
 				<?php 
 				if ($item['image']!='') {
-					echo "<img class='img_item' src='".base_url("uploads/categories/thumbs/".$item['image'])."'/>";
+					echo "<img class='img_item' style='width:150px;' src='".base_url("uploads/categories/thumbs/".$item['image'])."'/>";
 				}
 				?>
 				</td>
 				<td><?php echo $item["status"]?></td>
 				<td>
-					<a href="#" onclick="confirmClick('<?php echo base_url('/admin/category/delete/'.$type.'/'.$item["id"])?>')"  class="btn btn-default"> Delete </a>
+					<!-- <a href="#" onclick="confirmClick('<?php echo base_url('/admin/category/delete/'.$type.'/'.$item["id"])?>')"  class="btn btn-default"> Delete </a> -->
 					<a href="<?php echo base_url("/admin/category/edit/".$type."/".$item["id"]);?>" class="btn btn-default"> Edit </a>
 				</td>
 			</tr>
@@ -37,7 +37,7 @@
 					<td>
 					<?php 
 					if ($i['image']!='') {
-						echo "<img class='img_item' src='".base_url("uploads/categories/thumbs/".$i['image'])."'/>";
+						echo "<img class='img_item' style='width:150px;' src='".base_url("uploads/categories/thumbs/".$i['image'])."'/>";
 					}
 					?>
 					</td>
